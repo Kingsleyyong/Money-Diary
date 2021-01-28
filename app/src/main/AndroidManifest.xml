@@ -8,16 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoneyDiary">
-        <activity android:name=".SignInPage"></activity>
-        <activity android:name=".LoadingScreen">
+        android:theme="@style/Theme.MoneyDiary"
+        android:screenOrientation="portrait">
 
-            //make this ativity as main default launcher activity
+        <activity android:name=".ForgetPasswordPopUp" android:theme="@style/Theme.MoneyDiary.PopMe"></activity>
+        <activity android:name=".SignInPage" />
+        <activity android:name=".LoadingScreen">
+            //make this activity as main default launcher activity
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data

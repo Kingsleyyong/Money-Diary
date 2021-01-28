@@ -9,5 +9,10 @@
     <string name="sign_in">Sign In</string>
     <string name="new_user_click_here_for_signing_up">New user? Click here for signing up!</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="email">Email</string>
+    <string name="send_code_number">send code number</string>
+    <string name="submit">submit</string>
+    <string name="please_enter_received_code_number">Please enter received code number</string>
+    <string name="did_not_received_click_here_to_send_a_code_again_after_60_seconds">Did not received? Click here to send a code again after 60 seconds.</string>
 
 </resources>

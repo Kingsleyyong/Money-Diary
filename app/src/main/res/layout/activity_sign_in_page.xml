@@ -23,7 +23,7 @@
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
         android:layout_marginTop="340dp"
         android:autofillHints="Username"
         android:backgroundTint="@color/sysLightBlue"
@@ -39,7 +39,8 @@
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
+        android:autofillHints=""
         android:backgroundTint="@color/sysLightBlue"
         android:ems="10"
         android:hint="@string/password"
@@ -48,8 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -111,7 +111,7 @@
         app:layout_constraintTop_toBottomOf="@+id/signInButton" />
 
     <Button
-        android:id="@+id/signUpButton2"
+        android:id="@+id/signUpButton"
         android:layout_width="280dp"
         android:layout_height="39dp"
         android:layout_marginTop="10dp"
