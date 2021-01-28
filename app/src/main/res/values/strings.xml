@@ -18,5 +18,6 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="by_creating_an_account_you_will_be_agreed_to_our_terms_conditions_and_privacy_policy"><![CDATA[By creating an account, you will be agreed to our Terms & Conditions and Privacy & Policy.]]></string>
+    <string name="signUp">Sign Up</string>
 
 </resources>

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SignInPage extends AppCompatActivity {
 
-    Button forgotPassButton,signUpButton;
+    private Button forgotPassButton,signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
