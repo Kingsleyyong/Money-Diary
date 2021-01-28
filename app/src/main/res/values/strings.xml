@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Money Diary</string>
+    <string name="your_money_your_life">Your Money, Your Life.</string>
+    <string name="welcome_to_money_diary">Welcome to Money Diary</string>
+    <string name="todo">TODO</string>
+    <string name="dashboard">Dashboard</string>
 </resources>
