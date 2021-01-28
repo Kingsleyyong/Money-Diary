@@ -52,11 +52,4 @@ public class ForgetPassword extends AppCompatActivity {
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
-
-
-
-
-
-
-
 }

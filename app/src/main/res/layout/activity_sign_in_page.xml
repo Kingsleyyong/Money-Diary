@@ -87,7 +87,7 @@
         android:backgroundTint="@color/button_background_color"
         android:text="@string/sign_in"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/roboto"
         app:cornerRadius="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

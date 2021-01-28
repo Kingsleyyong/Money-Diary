@@ -10,7 +10,9 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
-        <activity android:name=".SignUpPage"></activity>
+        <activity
+            android:name=".SignUpPage"
+            android:theme="@style/Theme.MoneyDiary.PopMe"/>
         <activity
             android:name=".ForgetPassword"
             android:theme="@style/Theme.MoneyDiary.PopMe" />
