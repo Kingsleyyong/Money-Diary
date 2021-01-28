@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/mr_bedfort</item>
+        <item>@font/roboto</item>
         <item>@font/unlock</item>
     </array>
 </resources>

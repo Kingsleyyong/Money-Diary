@@ -2,8 +2,12 @@
     <string name="app_name">Money Diary</string>
     <string name="your_money_your_life">Your Money, Your Life.</string>
     <string name="welcome_to_money_diary">Welcome to Money Diary</string>
-    <string name="todo">TODO</string>
     <string name="dashboard">Dashboard</string>
     <string name="username">Username</string>
     <string name="todo">TODO</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="new_user_click_here_for_signing_up">New user? Click here for signing up!</string>
+    <string name="forgot_password">Forgot Password?</string>
+
 </resources>
