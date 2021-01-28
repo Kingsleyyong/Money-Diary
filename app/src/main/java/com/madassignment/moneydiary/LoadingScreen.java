@@ -1,6 +1,5 @@
 package com.madassignment.moneydiary;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,7 +30,7 @@ public class LoadingScreen extends AppCompatActivity {
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         //Hooks
-        image = findViewById(R.id.imageView2);
+        image = findViewById(R.id.logoImageLoadingPage);
         slogan1 = findViewById(R.id.textView);
         slogan2 = findViewById(R.id.textView2);
 

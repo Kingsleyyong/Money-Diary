@@ -1,31 +1,25 @@
 package com.madassignment.moneydiary;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-public class ForgetPasswordPopUp extends AppCompatActivity {
+public class ForgetPassword extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget_password_pop_up);
+        setContentView(R.layout.activity_forget_password);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -43,7 +37,7 @@ public class ForgetPasswordPopUp extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View widget) {
                 //Please do something here to give performance for 'here' text.
-                Toast.makeText(ForgetPasswordPopUp.this,"Here Clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ForgetPassword.this,"Here Clicked",Toast.LENGTH_SHORT).show();
 
             }
             //This is the style settings

@@ -9,7 +9,7 @@
     tools:context=".SignInPage">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/logoImageSignInPage"
         android:layout_width="0dp"
         android:layout_height="245dp"
         android:layout_marginTop="28dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextTextUsername"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="340dp"
@@ -49,23 +49,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsername" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/logoPersonSignInPage"
         android:layout_width="31dp"
         android:layout_height="30dp"
         android:src="@drawable/person_logo"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextUsername"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextUsername"
         app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextUsername"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextUsername"
         app:layout_constraintVertical_bias="0.36"
         android:contentDescription="@string/todo" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/logoPasswordSignInPage"
         android:layout_width="31dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextUsername"
         app:layout_constraintVertical_bias="0.81"
         android:contentDescription="@string/todo" />
 

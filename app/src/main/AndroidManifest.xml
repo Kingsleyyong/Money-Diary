@@ -7,11 +7,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoneyDiary"
-        android:screenOrientation="portrait">
-
-        <activity android:name=".ForgetPasswordPopUp" android:theme="@style/Theme.MoneyDiary.PopMe"></activity>
+        android:theme="@style/Theme.MoneyDiary">
+        <activity android:name=".SignUpPage"></activity>
+        <activity
+            android:name=".ForgetPassword"
+            android:theme="@style/Theme.MoneyDiary.PopMe" />
         <activity android:name=".SignInPage" />
         <activity android:name=".LoadingScreen">
             //make this activity as main default launcher activity
