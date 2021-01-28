@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".SignInPage"></activity>
         <activity android:name=".LoadingScreen">
 
             //make this ativity as main default launcher activity
