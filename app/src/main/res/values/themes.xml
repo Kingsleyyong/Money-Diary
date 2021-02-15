@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.MoneyDiary" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/sysDarkBlue</item>
+        <item name="colorPrimary">@color/sysLightBlue</item>
         <item name="colorPrimaryVariant">@color/sysLightBlue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -19,5 +19,14 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
+
+    <style name="Theme.MoneyDiary.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MoneyDiary.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MoneyDiary.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
