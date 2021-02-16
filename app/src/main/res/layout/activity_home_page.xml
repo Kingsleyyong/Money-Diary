@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
+    <include layout="@layout/content_scrolling" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
@@ -108,10 +110,29 @@
                 app:layout_constraintTop_toTopOf="@id/textHello"
                 app:tint="@color/white" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_scrolling" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/sysLightWhiteBlue"
+        app:fabCradleMargin="-5dp"
+        app:fabCradleRoundedCornerRadius="30dp"
+        app:fabCradleVerticalOffset="0dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_menu"
+        app:backgroundTint="@color/sysDarkBlue"
+        app:layout_anchor="@id/bottomAppBar"
+        app:layout_anchorGravity="center"
+        app:tint="@color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

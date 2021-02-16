@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/bottom_sheet"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="80dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_bg">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:text="Button"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="159dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="172dp"
+            android:text="Button"
+            app:layout_constraintTop_toBottomOf="@+id/button4"
+            tools:layout_editor_absoluteX="177dp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="Button"
+            app:layout_constraintTop_toBottomOf="@+id/button5"
+            tools:layout_editor_absoluteX="148dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
