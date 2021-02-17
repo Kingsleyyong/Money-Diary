@@ -8,12 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.shape.MaterialShapeDrawable;
-import com.google.android.material.shape.RelativeCornerSize;
-import com.google.android.material.shape.RoundedCornerTreatment;
 
 public class HomePage extends AppCompatActivity {
 
@@ -24,14 +20,6 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(getTitle());
-
-        BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
-        MaterialShapeDrawable bottomBarBackground = (MaterialShapeDrawable) bottomAppBar.getBackground();
-        bottomBarBackground.setShapeAppearanceModel(
-                bottomBarBackground.getShapeAppearanceModel()
-                        .toBuilder()
-                        .setAllCorners(new RoundedCornerTreatment()).setAllCornerSizes(new RelativeCornerSize(0.5f))
-                        .build());
 
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(v -> {
