@@ -27,9 +27,9 @@ public class SignInPage extends AppCompatActivity {
             startActivity(i);
         });
 
-         signInButton.setOnClickListener(v -> {
-             Intent i = new Intent(getApplicationContext(), HomePage.class);
-             startActivity(i);
-         });
+        signInButton.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), HomePage.class);
+            startActivity(i);
+        });
     }
 }

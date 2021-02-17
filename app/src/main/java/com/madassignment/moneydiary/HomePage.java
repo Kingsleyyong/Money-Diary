@@ -24,8 +24,7 @@ public class HomePage extends AppCompatActivity {
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(v -> {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomePage.this, R.style.BottomSheetTheme);
-            View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout,
-                    (ViewGroup)findViewById(R.id.bottom_sheet));
+            View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout, (ViewGroup)findViewById(R.id.bottom_sheet));
 
 //            sheetView.findViewById(R.id. /*give id*/).setOnClickListener(new View.OnClickListener(){
 //                //here to implement the action in the bottomSheet
