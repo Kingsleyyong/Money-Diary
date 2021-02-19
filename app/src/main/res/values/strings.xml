@@ -112,6 +112,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
-
-
+    <string name="log_out">Log Out</string>
+    <string name="made_by_mmu_diploma_students">Made by MMU Diploma Students.</string>
 </resources>
