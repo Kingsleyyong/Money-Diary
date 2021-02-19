@@ -1,15 +1,13 @@
 package com.madassignment.moneydiary;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,9 +43,10 @@ public class ForgetPassword extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View widget) {
                 //Please do something here to give performance for 'here' text.
-                Toast.makeText(ForgetPassword.this,"Here Clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ForgetPassword.this, "Here Clicked", Toast.LENGTH_SHORT).show();
 
             }
+
             //This is the style settings
             @Override
             public void updateDrawState(@NonNull TextPaint ds) {
@@ -55,7 +54,7 @@ public class ForgetPassword extends AppCompatActivity {
                 ds.setFakeBoldText(true);
             }
         };
-        ss.setSpan(clickableSpan1,24,28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan1, 24, 28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());

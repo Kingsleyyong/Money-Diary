@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
     android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:orientation="vertical"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="80dp">
+    app:behavior_peekHeight="80dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,19 +31,18 @@
                     android:id="@+id/imageHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/home_foreground"
                     android:background="@null"
-                    />
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/home_foreground" />
 
                 <ImageButton
                     android:id="@+id/imageManage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/manage_foreground"
+                    android:layout_marginStart="70dp"
                     android:background="@null"
-                    android:layout_marginStart="70dp"/>
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/manage_foreground" />
             </TableRow>
 
             <TableRow
@@ -55,20 +53,20 @@
                     android:id="@+id/imageStat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/stat_foreground"
+                    android:layout_marginTop="70dp"
                     android:background="@null"
-                    android:layout_marginTop="70dp"/>
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/stat_foreground" />
 
                 <ImageButton
                     android:id="@+id/imageSettings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/settings_foreground"
-                    android:background="@null"
                     android:layout_marginStart="70dp"
-                    android:layout_marginTop="70dp"/>
+                    android:layout_marginTop="70dp"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:src="@mipmap/settings_foreground" />
             </TableRow>
 
         </TableLayout>

@@ -55,14 +55,14 @@
         android:id="@+id/logoPersonSignInPage"
         android:layout_width="31dp"
         android:layout_height="30dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/person_logo"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextUsername"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextUsername"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="@+id/editTextTextUsername"
         app:layout_constraintTop_toTopOf="@+id/editTextTextUsername"
-        app:layout_constraintVertical_bias="0.36"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <ImageView
         android:id="@+id/logoPasswordSignInPage"
@@ -70,14 +70,14 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/password_logo"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextUsername"
-        app:layout_constraintVertical_bias="0.81"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <Button
         android:id="@+id/signInButton"
@@ -85,9 +85,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/button_background_color"
+        android:fontFamily="@font/roboto"
         android:text="@string/sign_in"
         android:textSize="24sp"
-        android:fontFamily="@font/roboto"
         app:cornerRadius="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,20 +1,18 @@
 package com.madassignment.moneydiary;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpPage extends AppCompatActivity {
 
@@ -45,9 +43,10 @@ public class SignUpPage extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View widget) {
                 //Please do something here to give performance for 'here' text.
-                Toast.makeText(SignUpPage.this,"Terms & Conditions Clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpPage.this, "Terms & Conditions Clicked", Toast.LENGTH_SHORT).show();
 
             }
+
             //This is the style settings
             @Override
             public void updateDrawState(@NonNull TextPaint ds) {
@@ -65,12 +64,12 @@ public class SignUpPage extends AppCompatActivity {
 
             @Override
             public void onClick(@NonNull View widget) {
-                Toast.makeText(SignUpPage.this,"Privacy & Policy Clicked",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpPage.this, "Privacy & Policy Clicked", Toast.LENGTH_SHORT).show();
             }
         };
 
-        ss.setSpan(clickableSpan1,50,68, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clickableSpan2,73,89, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan1, 50, 68, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan2, 73, 89, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());

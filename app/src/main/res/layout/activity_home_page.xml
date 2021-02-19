@@ -137,15 +137,13 @@
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
+    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
 
+    <!--android:layout_marginTop="22dp"-->
+    <!--android:background="@drawable/white_rectangle_bg"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:padding="15dp">-->
 
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="wrap_content"-->
-
-<!--android:layout_marginTop="22dp"-->
-<!--android:background="@drawable/white_rectangle_bg"-->
-<!--android:layout_gravity="center"-->
-<!--android:padding="15dp">-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -1,15 +1,18 @@
 package com.madassignment.moneydiary;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomePage extends AppCompatActivity {
 
@@ -27,7 +30,7 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomePage.this, R.style.BottomSheetTheme);
                 View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout,
-                        (ViewGroup)findViewById(R.id.bottom_sheet));
+                        (ViewGroup) findViewById(R.id.bottom_sheet));
 
                 sheetView.findViewById(R.id.imageHome).setOnClickListener(new View.OnClickListener() {
                     @Override
