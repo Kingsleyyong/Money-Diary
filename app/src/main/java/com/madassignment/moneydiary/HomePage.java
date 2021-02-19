@@ -22,17 +22,51 @@ public class HomePage extends AppCompatActivity {
         toolBarLayout.setTitle(getTitle());
 
         FloatingActionButton menu = findViewById(R.id.fab);
-        menu.setOnClickListener(v -> {
-            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomePage.this, R.style.BottomSheetTheme);
-            View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout, (ViewGroup)findViewById(R.id.bottom_sheet));
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomePage.this, R.style.BottomSheetTheme);
+                View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout,
+                        (ViewGroup)findViewById(R.id.bottom_sheet));
 
-//            sheetView.findViewById(R.id. /*give id*/).setOnClickListener(new View.OnClickListener(){
-//                //here to implement the action in the bottomSheet
-//                bottomSheetDialog.();
-//            })
+                sheetView.findViewById(R.id.imageHome).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-            bottomSheetDialog.setContentView(sheetView);
-            bottomSheetDialog.show();
+                sheetView.findViewById(R.id.imageManage).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomePage.this, "Manage ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                sheetView.findViewById(R.id.imageStat).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomePage.this, "Statistic ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                sheetView.findViewById(R.id.imageSettings).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomePage.this, "Settings ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                sheetView.findViewById(R.id.buttonLogOut).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                bottomSheetDialog.setContentView(sheetView);
+                bottomSheetDialog.show();
+            }
         });
 
         ImageView add = findViewById(R.id.imageAdding);
