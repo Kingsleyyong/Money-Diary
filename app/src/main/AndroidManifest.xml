@@ -10,6 +10,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
+        <activity android:name=".ExpensePieChartActivity"></activity>
         <activity android:name=".HomePage" />
         <activity
             android:name=".SignUpPage"

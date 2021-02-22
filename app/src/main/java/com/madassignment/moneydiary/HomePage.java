@@ -1,5 +1,6 @@
 package com.madassignment.moneydiary;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        Intent home = new Intent(getApplicationContext(),HomePage.class);
                     }
                 });
 

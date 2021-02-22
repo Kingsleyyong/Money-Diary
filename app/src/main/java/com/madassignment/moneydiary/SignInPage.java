@@ -19,6 +19,7 @@ public class SignInPage extends AppCompatActivity {
         Button signInButton = findViewById(R.id.signInButton);
 
         forgotPassButton.setOnClickListener(v -> {
+            //getApplicationContext() return the whole Application
             Intent i = new Intent(getApplicationContext(), ForgetPassword.class);
             startActivity(i);
         });

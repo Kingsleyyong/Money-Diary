@@ -182,11 +182,10 @@
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:backgroundTint="@color/button_background_color"
+        android:background="@drawable/search_icon_bg"
         android:fontFamily="@font/roboto"
         android:text="@string/signUp"
         android:textSize="24sp"
-        app:cornerRadius="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSignUpPage" />
