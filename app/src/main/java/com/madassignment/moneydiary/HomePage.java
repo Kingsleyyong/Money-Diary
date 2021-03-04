@@ -79,9 +79,6 @@ public class HomePage extends AppCompatActivity {
                 Toast.makeText(HomePage.this, "Add Button Clicked", Toast.LENGTH_SHORT).show()
         );
 
-        ImageView search = findViewById(R.id.imageSearch);
-        search.setOnClickListener(v ->
-                Toast.makeText(HomePage.this, "Search Button Clicked", Toast.LENGTH_SHORT).show()
-        );
+
     }
 }

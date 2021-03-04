@@ -8,95 +8,11 @@
     tools:context=".SignUpPage">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="76dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/firstNameSignUpPage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/identity_logo" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="353dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/passwordSignUpPage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/password_logo" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="170dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/usernameSignUpPage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/person_logo" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="441dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/reconfirmPasswordSignUpPage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/password_logo" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="40dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="262dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toStartOf="@+id/emailSignUpPage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mail_logo" />
-
-    <EditText
-        android:id="@+id/firstNameSignUpPage"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="76dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/sysLightBlue"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:hint="@string/first_name"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/lastNameSignUpPage"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/lastNameSignUpPage"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="76dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/sysLightBlue"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:hint="@string/last_name"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/usernameSignUpPage"
         android:layout_width="300dp"
         android:layout_height="36dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="108dp"
         android:autofillHints=""
         android:backgroundTint="@color/sysLightBlue"
         android:ems="10"
@@ -110,29 +26,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/emailSignUpPage"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="260dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/sysLightBlue"
-        android:ems="10"
-        android:fontFamily="@font/roboto"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/reconfirmPasswordSignUpPage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/password_logo" />
 
     <EditText
         android:id="@+id/reconfirmPasswordSignUpPage"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="442dp"
+        android:layout_marginTop="376dp"
         android:autofillHints=""
         android:backgroundTint="@color/sysLightBlue"
         android:ems="10"
@@ -150,7 +59,7 @@
         android:id="@+id/passwordSignUpPage"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="353dp"
+        android:layout_marginTop="284dp"
         android:autofillHints=""
         android:backgroundTint="@color/sysLightBlue"
         android:ems="10"
@@ -164,16 +73,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/emailSignUpPage"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="192dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/sysLightBlue"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/usernameSignUpPage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/person_logo" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/passwordSignUpPage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/password_logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toStartOf="@+id/emailSignUpPage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mail_logo" />
+
     <TextView
         android:id="@+id/textViewSignUpPage"
         android:layout_width="330dp"
         android:layout_height="41dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="460dp"
         android:fontFamily="@font/roboto"
         android:text="@string/by_creating_an_account_you_will_be_agreed_to_our_terms_conditions_and_privacy_policy"
         android:textColor="@color/sysLightBlue"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -181,12 +142,13 @@
         android:id="@+id/signUpButton"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/search_icon_bg"
         android:fontFamily="@font/roboto"
         android:text="@string/signUp"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSignUpPage" />
 
