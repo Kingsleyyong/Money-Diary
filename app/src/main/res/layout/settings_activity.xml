@@ -28,14 +28,14 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/about_us"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/todo"
                     app:srcCompat="@mipmap/about_us_round" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/feedback_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/todo"
@@ -44,32 +44,6 @@
 
         </TableLayout>
 
-        <Button
-            android:id="@+id/buttonLogOut"
-            android:layout_width="291dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/search_icon_bg"
-            android:fontFamily="@font/roboto"
-            android:text="@string/log_out"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/made_by_mmu_diploma_students"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogOut" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
