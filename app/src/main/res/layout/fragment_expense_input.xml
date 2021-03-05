@@ -14,55 +14,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/rm"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moneyInput"
+                app:layout_constraintStart_toStartOf="@+id/moneyInput"
+                app:layout_constraintTop_toTopOf="@+id/moneyInput"
+                app:layout_constraintVertical_bias="0.562" />
+
             <EditText
                 android:id="@+id/moneyInput"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="36dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/rm"
                 android:inputType="numberDecimal"
                 android:text="@string/_0_00"
                 android:textAlignment="viewEnd"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/spinnerCategory_Income"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerCategory_Expense"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/spinnerCategory_Income"
+                app:layout_constraintStart_toStartOf="@+id/spinnerCategory_Expense"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Spinner
-                android:id="@+id/spinnerCategory_Income"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:autofillHints="Select Category"
-                app:layout_constraintEnd_toEndOf="@+id/editTextDate"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editTextDate"
-                app:layout_constraintTop_toBottomOf="@+id/moneyInput" />
 
             <EditText
                 android:id="@+id/editTextDate"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:autofillHints="DATE"
+                android:layout_marginTop="32dp"
+                android:autofillHints="Date"
                 android:ems="10"
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerCategory_Income" />
+                app:layout_constraintTop_toBottomOf="@+id/spinnerCategory_Expense" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="@+id/SubmitRecord_Income"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="@+id/SubmitRecord_Expense"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/SubmitRecord_Income"
+                app:layout_constraintStart_toStartOf="@+id/SubmitRecord_Expense"
                 app:layout_constraintTop_toBottomOf="@+id/editTextDate">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -73,25 +73,24 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/SubmitRecord_Income"
+                android:id="@+id/SubmitRecord_Expense"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="56dp"
                 android:text="@string/save_record"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/spinnerCategory_Expense"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="@string/rm"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/moneyInput"
-                app:layout_constraintStart_toStartOf="@+id/moneyInput"
-                app:layout_constraintTop_toTopOf="@+id/moneyInput" />
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextDate"
+                app:layout_constraintTop_toBottomOf="@+id/moneyInput" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
