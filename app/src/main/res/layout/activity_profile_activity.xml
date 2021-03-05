@@ -23,11 +23,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/editProfileBtn"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Edit Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

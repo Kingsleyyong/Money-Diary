@@ -76,6 +76,7 @@
     <string name="chew_zhi_peng_1191202464">CHEW ZHI PENG 1191202464</string>
     <string name="matthew_labial_john_1191202516">MATTHEW LABIAL JOHN 1191202516</string>
     <string name="yong_jing_ping_1191202279">YONG JING PING 1191202279</string>
+    <string name="edit_profile">Edit Profile</string>
 
     <string-array name="incomeCategory">
         <item>Income Category 1</item>
