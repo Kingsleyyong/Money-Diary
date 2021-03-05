@@ -7,20 +7,20 @@ import androidx.room.PrimaryKey;
 public class expense_record {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "expenseId")
-    private int expense_id;
+    public int expense_id;
     @ColumnInfo(name = "expenseCategory")
-    private String expense_cate;
+    public String expense_cate;
     @ColumnInfo(name = "expenseDecs")
-    private String expense_decs;
+    public String expense_decs;
     @ColumnInfo(name = "expensePrice")
-    private float expense_price;
+    public float expense_price;
 
-    public expense_record(String category, String decs, float price) {
-        this.expense_id = expense_id;
-        this.expense_cate = category;
-        this.expense_decs = decs;
-        this.expense_price = price;
-    }
+//    public expense_record(String category, String decs, float price) {
+//        this.expense_id = expense_id;
+//        this.expense_cate = category;
+//        this.expense_decs = decs;
+//        this.expense_price = price;
+//    }
     public int getExpense_id() {
         return this.expense_id;
     }
