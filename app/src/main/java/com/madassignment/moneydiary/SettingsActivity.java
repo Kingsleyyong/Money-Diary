@@ -26,11 +26,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public void to_feedback(View v) {
-        Intent i = new Intent(this, feedback.class);
-        startActivity(i);
-    }
-
     public static class SettingsFragment extends PreferenceFragmentCompat {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

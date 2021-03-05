@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="731dp"
         android:background="@drawable/bottom_sheet_bg">
 
         <TableLayout
@@ -31,15 +31,15 @@
                     android:id="@+id/imageButton2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="to_feedback"
-                    app:srcCompat="@mipmap/about_us_round"
-                    android:contentDescription="@string/todo" />
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@mipmap/about_us_round" />
+
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/feedback_round"
-                    android:contentDescription="@string/todo" />
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@mipmap/feedback_round" />
             </TableRow>
 
         </TableLayout>
