@@ -12,6 +12,7 @@
         android:theme="@style/Theme.MoneyDiary">
         <activity android:name=".ExpensePieChartActivity"></activity>
         <activity android:name=".HomePage" />
+        <activity android:name=".addRecord"/>
         <activity
             android:name=".SignUpPage"
             android:theme="@style/Theme.MoneyDiary.PopMe" />

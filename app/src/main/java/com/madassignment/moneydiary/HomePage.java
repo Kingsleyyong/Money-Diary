@@ -75,10 +75,13 @@ public class HomePage extends AppCompatActivity {
         });
 
         ImageView add = findViewById(R.id.imageAdding);
-        add.setOnClickListener(v ->
-                Toast.makeText(HomePage.this, "Add Button Clicked", Toast.LENGTH_SHORT).show()
-        );
-
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomePage.this, addRecord.class);
+                startActivity(i);
+            }
+        });
 
     }
 }
