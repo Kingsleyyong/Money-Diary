@@ -16,6 +16,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
+        <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".About_us"></activity>
         <activity
             android:name=".SettingsActivity"
@@ -33,7 +34,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".feedback" />
-        <activity android:name=".ExpensePieChartActivity" />
         <activity android:name=".HomePage" />
         <activity android:name=".addRecord" />
         <activity
