@@ -62,6 +62,7 @@
     <string name="description">Description</string>
     <string name="save_record">Save Record</string>
     <string name="category_1">Category 1</string>
+    <string name="your_personal_data">Your Personal Data</string>
 
     <string-array name="incomeCategory">
         <item>Income Category 1</item>

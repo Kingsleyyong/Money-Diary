@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -17,6 +18,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomePage extends AppCompatActivity {
 
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +40,16 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
-                        Intent home = new Intent(getApplicationContext(),HomePage.class);
+                        bottomSheetDialog.dismiss();
                     }
                 });
 
                 sheetView.findViewById(R.id.imageManage).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Manage ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        Intent profile = new Intent(getApplicationContext(), ProfileActivity.class);
+                        startActivity(profile);
                     }
                 });
 
@@ -84,4 +89,6 @@ public class HomePage extends AppCompatActivity {
         });
 
     }
+
+
 }

@@ -16,9 +16,10 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
+        <activity android:name=".ProfileActivity"></activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,7 +33,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".feedback" />
-        <activity android:name=".ExpensePieChartActivity" />
         <activity android:name=".HomePage" />
         <activity android:name=".addRecord" />
         <activity
