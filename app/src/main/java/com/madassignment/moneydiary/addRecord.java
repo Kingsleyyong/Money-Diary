@@ -26,19 +26,24 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
         incomeBtn.setOnClickListener(this);
         expenseBtn.setOnClickListener(this);
 
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayout, new ExpenseInputFragment());
+        ft.commit();
     }
 
     @Override
     public void onClick(View v) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         switch(v.getId()){
             case R.id.IncomeBtn:
                 Toast.makeText(this,"Income",Toast.LENGTH_SHORT).show();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.frameLayout, new IncomeInputFragment());
                 ft.commit();
                 break;
             case R.id.ExpenseBtn:
                 Toast.makeText(this,"Expense",Toast.LENGTH_SHORT).show();
+                ft.replace(R.id.frameLayout, new ExpenseInputFragment());
+                ft.commit();
                 break;
         }
     }

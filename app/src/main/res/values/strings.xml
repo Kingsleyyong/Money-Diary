@@ -4,7 +4,6 @@
     <string name="welcome_to_money_diary">Welcome to Money Diary</string>
     <string name="dashboard">Dashboard</string>
     <string name="username">Username</string>
-    <string name="todo">TODO</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="new_user_click_here_for_signing_up">New user? Click here for signing up!</string>
@@ -51,5 +50,31 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
+
+    <string name="title_activity_add_record">addRecord</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="income">income</string>
+    <string name="expense">Expense</string>
+    <string name="description">Description</string>
+    <string name="save_record">Save Record</string>
+    <string name="category_1">Category 1</string>
+
+    <string-array name="incomeCategory">
+        <item>Income Category 1</item>
+        <item>Income Category 2</item>
+        <item>Income Category 3</item>
+        <item>Income Category 4</item>
+        <item>Income Category 5</item>
+    </string-array>
+    <string-array name="expenseCategory">
+        <item>Expense Category 1</item>
+        <item>Expense Category 2</item>
+        <item>Expense Category 3</item>
+        <item>Expense Category 4</item>
+        <item>Expense Category 5</item>
+    </string-array>
 </resources>
