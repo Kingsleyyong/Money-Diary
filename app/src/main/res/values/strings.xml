@@ -63,6 +63,19 @@
     <string name="save_record">Save Record</string>
     <string name="category_1">Category 1</string>
     <string name="your_personal_data">Your Personal Data</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="develop_by_mmu_students">Develop By MMU Students</string>
+    <string name="ho_ko_ee">Ho Ko Ee</string>
+    <string name="chew_zhi_peng">Chew Zhi Peng</string>
+    <string name="student_name">Student Name</string>
+    <string name="chan_lin_chee">Chan Lin Chee</string>
+    <string name="matthew_labial_john">Matthew Labial John</string>
+    <string name="yong_jing_ping">Yong Jing Ping</string>
+    <string name="ho_ko_ee_1191202709">HO KO EE 1191202709</string>
+    <string name="chan_lin_chee_1191202546">CHAN LIN CHEE 1191202546</string>
+    <string name="chew_zhi_peng_1191202464">CHEW ZHI PENG 1191202464</string>
+    <string name="matthew_labial_john_1191202516">MATTHEW LABIAL JOHN 1191202516</string>
+    <string name="yong_jing_ping_1191202279">YONG JING PING 1191202279</string>
 
     <string-array name="incomeCategory">
         <item>Income Category 1</item>
