@@ -8,6 +8,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpPage extends AppCompatActivity {
+
+    UserDatabase mDatabaseHelper;
+    private EditText username, email, password, confirmPassword;
+    private Button signUpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,31 @@ public class SignUpPage extends AppCompatActivity {
 
         //For clickable text in a textfield, please watch:
         //https://www.youtube.com/watch?v=E4xSjGZWR3E
+
+        username = (EditText) findViewById(R.id.usernameSignUpPage);
+        email = (EditText) findViewById(R.id.emailSignUpPage);
+        password = (EditText) findViewById(R.id.passwordSignUpPage);
+        confirmPassword = (EditText) findViewById(R.id.reconfirmPasswordSignUpPage);
+        signUpBtn = (Button) findViewById(R.id.signUpButton);
+        mDatabaseHelper = new UserDatabase(this);
+
+
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = username.getText().toString();
+                String mail = email.getText().toString();
+                String pw = password.getText().toString();
+                String cfpw = confirmPassword.getText().toString();
+
+                if(name.length()!=0 && mail.length()!=0 && pw.length()!=0 && cfpw.length()!=0) {
+                    AddData(name,mail,pw,cfpw);
+                }
+            }
+        });
+
+
+
         TextView textView = findViewById(R.id.textViewSignUpPage);
         String text = "By creating an account, you will be agreed to our Terms & Conditions and Privacy & Policy.";
         SpannableString ss = new SpannableString(text);
@@ -55,6 +86,7 @@ public class SignUpPage extends AppCompatActivity {
             }
         };
 
+
         ClickableSpan clickableSpan2 = new ClickableSpan() {
             @Override
             public void updateDrawState(@NonNull TextPaint ds) {
@@ -73,5 +105,20 @@ public class SignUpPage extends AppCompatActivity {
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    public void AddData(String name, String mail, String pw, String cfpw) {
+        boolean insertData = mDatabaseHelper.addData(name,mail,pw,cfpw);
+
+        if(insertData) {
+            toastMessage("Data Successfully Inserted");
+        }
+        else {
+            toastMessage("Something went wrong");
+        }
+    }
+
+    private void toastMessage (String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
