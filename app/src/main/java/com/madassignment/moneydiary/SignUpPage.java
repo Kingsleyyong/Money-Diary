@@ -1,6 +1,5 @@
 package com.madassignment.moneydiary;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -39,9 +38,6 @@ public class SignUpPage extends AppCompatActivity {
 //        params.y = 0;
 //        getWindow().setAttributes(params);
 
-        //For clickable text in a textfield, please watch:
-        //https://www.youtube.com/watch?v=E4xSjGZWR3E
-
         username = (EditText) findViewById(R.id.usernameSignUpPage);
         email = (EditText) findViewById(R.id.emailSignUpPage);
         password = (EditText) findViewById(R.id.passwordSignUpPage);
@@ -50,19 +46,6 @@ public class SignUpPage extends AppCompatActivity {
         mDatabaseHelper = new UserDatabase(this);
 
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = username.getText().toString();
-                String mail = email.getText().toString();
-                String pw = password.getText().toString();
-                String cfpw = confirmPassword.getText().toString();
-
-                if(name.length()!=0 && mail.length()!=0 && pw.length()!=0 && cfpw.length()!=0) {
-                    AddData(name,mail,pw,cfpw);
-                }
-            }
-        });
 
 
 
