@@ -71,4 +71,9 @@
         android:background="#173042"
         android:text="@string/submit_feedback"
         android:textColor="#FBF6F6" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="283dp" />
 </LinearLayout>
