@@ -18,6 +18,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userEmail = (:email) ")
     User CheckUser(String email);
 
+    @Query("UPDATE user SET userPW = 'ABC123' WHERE userEmail= (:usrEmail)")
+    void resetPassword(String usrEmail);
+
     @Query("SELECT * FROM user WHERE userEmail = :email ")
     List<User>findUser(String email);
 

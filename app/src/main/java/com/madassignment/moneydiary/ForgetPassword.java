@@ -48,6 +48,8 @@ public class ForgetPassword extends AppCompatActivity {
                         else {
                             resetPwBtn.setEnabled(false);
 
+                            userDao.resetPassword(rsEmail);
+
                             Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("text/plain");
                             intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "moneydiary_official@gmail.com" } );
