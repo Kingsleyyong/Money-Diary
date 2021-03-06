@@ -15,70 +15,38 @@
         android:layout_height="match_parent"
         android:background="@drawable/bottom_sheet_bg">
 
-        <TableLayout
-            android:id="@+id/tableLayout"
+        <ImageButton
+            android:id="@+id/imageManage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:src="@mipmap/manage_foreground"
+            app:layout_constraintEnd_toStartOf="@+id/imageSettings"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageButton
-                    android:id="@+id/imageHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/home_foreground" />
-
-                <ImageButton
-                    android:id="@+id/imageManage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/manage_foreground" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageButton
-                    android:id="@+id/imageStat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/stat_foreground" />
-
-                <ImageButton
-                    android:id="@+id/imageSettings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="70dp"
-                    android:onClick="to_setting"
-                    android:background="@null"
-                    android:contentDescription="@string/todo"
-                    android:src="@mipmap/settings_foreground" />
-
-            </TableRow>
-
-        </TableLayout>
+        <ImageButton
+            android:id="@+id/imageSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:onClick="to_setting"
+            android:src="@mipmap/settings_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageManage"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonLogOut"
             android:layout_width="291dp"
             android:layout_height="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:background="@drawable/search_icon_bg"
             android:fontFamily="@font/roboto"
             android:text="@string/log_out"
@@ -86,7 +54,7 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/imageManage" />
 
         <TextView
             android:id="@+id/textView3"
