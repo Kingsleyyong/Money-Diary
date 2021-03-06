@@ -29,10 +29,26 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
 
+<<<<<<< HEAD
+//        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
+        userAdapter = new UserAdapter();
+        btnNewUsr = findViewById(R.id.signUpButton);
+
+//        userVM.getAllUsers().observe(this, new Observer<List<User>>() {
+//            @Override
+//            public void onChanged(List<User> users) {
+//                if(users.size() >0){
+//                    userAdapter.setData(users);
+//                    recyclerView.setAdapter(userAdapter);
+//                }
+//            }
+//        });
+=======
         EditText name = findViewById(R.id.usernameSignUpPage);
         EditText email = findViewById(R.id.emailSignUpPage);
         EditText pass = findViewById(R.id.passwordSignUpPage);
         EditText cfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
+>>>>>>> a07855a760688565955783574ef2fd6b5aed1119
 
         Button saveButton = findViewById(R.id.signUpButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +149,12 @@ public class SignUpPage extends AppCompatActivity {
         finish();
     }
 
+<<<<<<< HEAD
+//                userVM.insertUser(user);
+            }
+        });
+=======
+>>>>>>> a07855a760688565955783574ef2fd6b5aed1119
 
 //    private void observerSetup ( ) {
 //

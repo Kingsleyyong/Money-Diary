@@ -16,8 +16,9 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".About_us"></activity>
+        <activity android:name=".Feedback"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".About_us" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,7 +31,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".feedback" />
+        <activity android:name=".feedback2" />
         <activity android:name=".HomePage" />
         <activity android:name=".addRecord" />
         <activity

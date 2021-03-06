@@ -84,6 +84,8 @@
     <string name="dd_mm_yy">dd/mm/yy</string>
     <string name="_0_00">0.00</string>
     <string name="hint">hint</string>
+    <string name="contact_us">CONTACT US</string>
+    <string name="feel_free_to_drop_us_your_feedback">Feel free to drop us your feedback</string>
 
 
     <string-array name="incomeCategory">
