@@ -113,7 +113,7 @@ public class SignUpPage extends AppCompatActivity {
     UserAdapter userAdapter;
 
         TextView textView = findViewById(R.id.textViewSignUpPage);
-        String text = "By creating an account, you will be agreed to our Terms & Conditions and Privacy & Policy.";
+        String text = "By creating an account, you will be agreed to our Terms & Conditions and Privacy Policy.";
         SpannableString ss = new SpannableString(text);
 
         ClickableSpan clickableSpan1 = new ClickableSpan() {
