@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="31dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextDateRecord"
+        android:layout_width="82dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints="date"
+        android:ems="10"
+        android:hint="@string/dd_mm_yy"
+        android:inputType="date"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCategoryRecord"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextCategoryRecord"
+        android:layout_width="135dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/category_name"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/editTextAmountRecord"
+        app:layout_constraintStart_toEndOf="@+id/editTextDateRecord"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAmountRecord"
+        android:layout_width="93dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/_0_00"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextCategoryRecord"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="355dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCategoryRecord">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDescRecord"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFFFFF"
+            android:hint="@string/hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

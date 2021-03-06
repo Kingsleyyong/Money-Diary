@@ -26,7 +26,6 @@
     <string name="made_by_mmu_diploma_students">Made by MMU Diploma Students.</string>
     <string name="total_income">Total Income</string>
     <string name="rm">RM </string>
-    <string name="_0_00">0.00</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="very_bad">Very Bad</string>
@@ -59,7 +58,7 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="income">income</string>
     <string name="expense">Expense</string>
-    <string name="description">Description</string>
+    <string name="description">Description: </string>
     <string name="save_record">Save Record</string>
     <string name="category_1">Category 1</string>
     <string name="your_personal_data">Your Personal Data</string>
@@ -81,6 +80,11 @@
     <string name="get_new_password">get new password</string>
     <string name="our_members">Our Members</string>
     <string name="total_expense">Total Expense</string>
+    <string name="category_name">Category Name</string>
+    <string name="dd_mm_yy">dd/mm/yy</string>
+    <string name="_0_00">0.00</string>
+    <string name="hint">hint</string>
+
 
     <string-array name="incomeCategory">
         <item>Income Category 1</item>
