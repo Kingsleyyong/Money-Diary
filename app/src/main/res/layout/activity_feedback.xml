@@ -1,79 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CFDFDA"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".feedback">
+    tools:context=".Feedback">
 
     <TextView
-        android:id="@+id/feedback_title"
-        android:layout_width="match_parent"
+        android:id="@+id/contactUsLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/unlock"
+        android:text="@string/contact_us"
+        android:textSize="58sp"
+        app:layout_constraintBottom_toTopOf="@+id/feedbackLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feedbackLabel"
+        android:layout_width="292dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/adamina"
-        android:text="@string/feedback"
+        android:text="@string/feel_free_to_drop_us_your_feedback"
         android:textAlignment="center"
-        android:textColor="#173042"
-        android:textSize="30sp" />
+        android:textSize="29sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactUsLabel" />
 
-    <TextView
-        android:id="@+id/feedback_rating_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="@font/adamina"
-        android:gravity="center_horizontal"
-        android:text="@string/very_bad"
-        android:textSize="18sp" />
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedbackLabel">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:progressBackgroundTint="#AEACA3"
-            android:progressTint="#FFEB3B" />
+        <androidx.fragment.app.FragmentContainerView
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-    </LinearLayout>
 
-    <EditText
-        android:id="@+id/feedback_comment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/enter_your_comment_here"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:lines="5"
-        android:padding="10dp" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="20dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
-        android:background="#173042"
-        android:text="@string/submit_feedback"
-        android:textColor="#FBF6F6" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="match_parent"
-        android:layout_height="283dp" />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

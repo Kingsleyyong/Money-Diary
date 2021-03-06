@@ -15,7 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class feedback extends AppCompatActivity implements OnMapReadyCallback {
+public class feedback2 extends AppCompatActivity implements OnMapReadyCallback {
     TextView feedback_rating_text;
     RatingBar ratingBar;
     MapView mMapView;
@@ -26,7 +26,7 @@ public class feedback extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_feedback2);
 
         feedback_rating_text = findViewById(R.id.feedback_rating_text);
         ratingBar = findViewById(R.id.ratingBar);
