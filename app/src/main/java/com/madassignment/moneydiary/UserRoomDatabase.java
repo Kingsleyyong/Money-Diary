@@ -8,11 +8,12 @@ import androidx.room.RoomDatabase;
 @Database(entities = {User.class}, version = 1)
 
 public abstract class UserRoomDatabase extends RoomDatabase {
+    private static final String dbname= "user";
     public abstract UserDao userDao();
 
     private static UserRoomDatabase INSTANCE;
 
-    static UserRoomDatabase getDatabase(final Context context)
+    public static synchronized UserRoomDatabase getDatabase(final Context context)
     {
         if(INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),

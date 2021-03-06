@@ -1,12 +1,13 @@
 package com.madassignment.moneydiary;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,13 +17,12 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import android.content.DialogInterface;
-
 public class HomePage extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView aboutus, feedback;
+    TextView usrname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,11 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(getTitle());
+
+        usrname = findViewById(R.id.textUsername);
+        String name = getIntent().getStringExtra("name");
+        usrname.setText(name);
+
 
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(new View.OnClickListener() {

@@ -12,6 +12,9 @@ public interface UserDao {
     @Insert
     void insertUser(User user);
 
+    @Query("SELECT * FROM user WHERE userName=(:userName) and userPW=(:password)")
+    User login(String userName, String password);
+
     @Query("SELECT * FROM user WHERE userEmail = :email ")
     List<User>findUser(String email);
 
