@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/phone_Cardview"
+    android:layout_width="400dp"
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    android:textAlignment="center"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="6dp">
+
+    <RelativeLayout
+        android:id="@+id/background_color"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:background="@color/card2"
+        android:padding="5dp">
+
+
+        <ImageView
+            android:id="@+id/phone_image"
+            android:layout_width="120dp"
+            android:layout_height="132dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="31dp"
+            android:layout_marginBottom="42dp"
+            android:src="@drawable/lyn_img" />
+
+        <TextView
+            android:id="@+id/phone_title"
+            android:layout_width="244dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="3dp"
+            android:layout_toEndOf="@+id/phone_image"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="Chan Lin Chee"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentID"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/phone_title"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="-52dp"
+            android:layout_toEndOf="@+id/phone_image"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/chan_lin_chee_1191202546"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

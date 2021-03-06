@@ -117,7 +117,6 @@ public class SignUpPage extends AppCompatActivity {
     }
 
     public void addUsers(Context context){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view1 = getLayoutInflater().inflate(R.layout.activity_sign_up_page, null);
 
         Button addUsr = view1.findViewById(R.id.signUpButton);
@@ -137,10 +136,6 @@ public class SignUpPage extends AppCompatActivity {
             }
         });
 
-        builder.setView(view1);
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
+}
 
 }
