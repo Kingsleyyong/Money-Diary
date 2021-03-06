@@ -1,6 +1,8 @@
 package com.madassignment.moneydiary;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -8,6 +10,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,30 +37,42 @@ public class ForgetPassword extends AppCompatActivity {
 //        params.y = 0;
 //        getWindow().setAttributes(params);
 
-        //For clickable text in a textfield, please watch:
-        //https://www.youtube.com/watch?v=E4xSjGZWR3E
-        TextView textView = findViewById(R.id.sendCodeStatement);
-        String text = "Did not received? Click here to send a code again after 60 seconds.";
-        SpannableString ss = new SpannableString(text);
 
-        ClickableSpan clickableSpan1 = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View widget) {
-                //Please do something here to give performance for 'here' text.
-                Toast.makeText(ForgetPassword.this, "Here Clicked", Toast.LENGTH_SHORT).show();
+        Button resetPwBtn = findViewById(R.id.resetPassBtn);
+        resetPwBtn.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View v){
+                        EditText resetEmail = findViewById(R.id.emailForReset);
+                        String rsEmail = resetEmail.getText().toString();
 
-            }
+                        if(rsEmail.equals("") || rsEmail == null) {
+                            Toast.makeText(ForgetPassword.this, "Please insert an email", Toast.LENGTH_SHORT).show();
+                        }
+//                        else if( ){
+//                            email not existing
+//                        }
+                        else {
+                            resetPwBtn.setEnabled(false);
 
-            //This is the style settings
-            @Override
-            public void updateDrawState(@NonNull TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setFakeBoldText(true);
-            }
-        };
-        ss.setSpan(clickableSpan1, 24, 28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.setType("text/plain");
+                            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "moneydiary_official@gmail.com" } );
+                            intent.putExtra(Intent.EXTRA_SUBJECT, "Money Diary App Reset Password");
+                            intent.putExtra(Intent.EXTRA_TEXT, "Your password had been reset to ABC123. Please reset your password after logging in. \n" +
+                                    "\n Please send us an email if you have any problems.");
 
-        textView.setText(ss);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+                            try {
+                                startActivity(Intent.createChooser(intent, "Send mail..."));
+                            } catch (android.content.ActivityNotFoundException ex) {
+                                Toast.makeText(ForgetPassword.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+
+                    }
+                }
+        );
+
     }
+
 }

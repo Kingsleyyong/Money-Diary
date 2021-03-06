@@ -40,10 +40,8 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.imageHome).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
-//                        bottomSheetDialog.dismiss();
-                        Intent i = new Intent(HomePage.this, ProfileActivity.class);
-                        startActivity(i);
+                        Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
                     }
 
                 });
