@@ -10,13 +10,12 @@
         android:id="@+id/contactUsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/unlock"
         android:text="@string/contact_us"
         android:textSize="58sp"
         app:layout_constraintBottom_toTopOf="@+id/feedbackLabel"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,9 +23,7 @@
         android:id="@+id/feedbackLabel"
         android:layout_width="292dp"
         android:layout_height="95dp"
-        android:layout_marginStart="62dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/adamina"
         android:text="@string/feel_free_to_drop_us_your_feedback"
         android:textAlignment="center"
@@ -47,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/feedbackLabel">
 
 
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.fragment.app.FragmentContainerView
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:id="@+id/map"
             android:layout_width="match_parent"

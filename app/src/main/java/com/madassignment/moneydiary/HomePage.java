@@ -37,28 +37,12 @@ public class HomePage extends AppCompatActivity {
                 View sheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.botton_sheet_layout,
                         (ViewGroup) findViewById(R.id.bottom_sheet));
 
-                sheetView.findViewById(R.id.imageHome).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Home ImageButton Clicked", Toast.LENGTH_SHORT).show();
-                        bottomSheetDialog.dismiss();
-                    }
-
-                });
-
                 sheetView.findViewById(R.id.imageManage).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
                         Intent profile = new Intent(getApplicationContext(), ProfileActivity.class);
                         startActivity(profile);
-                    }
-                });
-
-                sheetView.findViewById(R.id.imageStat).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Statistic ImageButton Clicked", Toast.LENGTH_SHORT).show();
                     }
                 });
 

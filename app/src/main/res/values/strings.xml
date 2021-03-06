@@ -86,6 +86,8 @@
     <string name="hint">hint</string>
     <string name="contact_us">CONTACT US</string>
     <string name="feel_free_to_drop_us_your_feedback">Feel free to drop us your feedback</string>
+    <string name="objectives">This is a project developed by a team of Diploma students in MMU Cyberjaya, Malaysia. We found out that most of the youth in the era down not have a good money management. We hope that by using our application, teenagers can notice what and how much they spend in their activities and improve their money management.</string>
+    <string name="mmulogo">mmulogo</string>
 
 
     <string-array name="incomeCategory">

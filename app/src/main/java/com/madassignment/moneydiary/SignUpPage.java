@@ -29,7 +29,11 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
 
+<<<<<<< HEAD
 
+=======
+//<<<<<<< HEAD
+>>>>>>> 11d2609458f68d8e8ab1391ffa3bdbd2bb9886a3
 //        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
         userAdapter = new UserAdapter();
         btnNewUsr = findViewById(R.id.signUpButton);
@@ -43,12 +47,21 @@ public class SignUpPage extends AppCompatActivity {
 //                }
 //            }
 //        });
+<<<<<<< HEAD
 
         EditText name = findViewById(R.id.usernameSignUpPage);
         EditText email = findViewById(R.id.emailSignUpPage);
         EditText pass = findViewById(R.id.passwordSignUpPage);
         EditText cfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
 
+=======
+//=======
+//        EditText name = findViewById(R.id.usernameSignUpPage);
+//        EditText email = findViewById(R.id.emailSignUpPage);
+//        EditText pass = findViewById(R.id.passwordSignUpPage);
+//        EditText cfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
+//>>>>>>> a07855a760688565955783574ef2fd6b5aed1119
+>>>>>>> 11d2609458f68d8e8ab1391ffa3bdbd2bb9886a3
 
         Button saveButton = findViewById(R.id.signUpButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +148,7 @@ public class SignUpPage extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+<<<<<<< HEAD
 //    private void saveNewUser(String name, String email, String pass, String cfmPass){
 //        UserRoomDatabase db = UserRoomDatabase.getDatabase(this.getApplicationContext());
 //
@@ -155,6 +169,29 @@ public class SignUpPage extends AppCompatActivity {
 //        });
 //
 //
+=======
+    private void saveNewUser(String name, String email, String pass, String cfmPass){
+        UserRoomDatabase db = UserRoomDatabase.getDatabase(this.getApplicationContext());
+
+        User user =new User();
+        user.username = name;
+        user.email = email;
+        user.password = pass;
+        user.confirmPassword = cfmPass;
+        db.userDao().insertUser(user);
+
+        Toast.makeText(SignUpPage.this, "Successfully Registered!", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+//<<<<<<< HEAD
+////                userVM.insertUser(user);
+//            }
+//        });
+//=======
+//>>>>>>> a07855a760688565955783574ef2fd6b5aed1119
+
+>>>>>>> 11d2609458f68d8e8ab1391ffa3bdbd2bb9886a3
 //    private void observerSetup ( ) {
 //
 //    }
