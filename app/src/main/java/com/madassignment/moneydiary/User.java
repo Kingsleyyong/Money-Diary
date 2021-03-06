@@ -14,16 +14,16 @@ public class User {
     private int UID;
 
     @ColumnInfo(name = "userName")
-    private String username;
+    public String username;
 
     @ColumnInfo(name = "userEmail")
-    private String email;
+    public String email;
 
     @ColumnInfo(name = "userPW")
-    private String password;
+    public String password;
 
     @ColumnInfo(name = "userCfPw")
-    private String confirmPassword;
+    public String confirmPassword;
 
 //    public User(String username, String email, String password, String confirmPassword) {
 //        this.UID = UID;

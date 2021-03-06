@@ -1,6 +1,5 @@
 package com.madassignment.moneydiary;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -14,13 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
 
 public class SignUpPage extends AppCompatActivity {
     UserViewModel userVM;
@@ -35,26 +29,39 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
 
-        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
-        userAdapter = new UserAdapter();
-        btnNewUsr = findViewById(R.id.signUpButton);
+        EditText name = findViewById(R.id.usernameSignUpPage);
+        EditText email = findViewById(R.id.emailSignUpPage);
+        EditText pass = findViewById(R.id.passwordSignUpPage);
+        EditText cfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
 
-        userVM.getAllUsers().observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-                if(users.size() >0){
-                    userAdapter.setData(users);
-                    recyclerView.setAdapter(userAdapter);
-                }
-            }
-        });
-
-        btnNewUsr.setOnClickListener(new View.OnClickListener() {
+        Button saveButton = findViewById(R.id.signUpButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addUsers(SignUpPage.this);
+                saveNewUser(name.getText().toString(),email.getText().toString(),pass.getText().toString(),cfmPass.getText().toString());
             }
         });
+
+//        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
+//        userAdapter = new UserAdapter();
+//        btnNewUsr = findViewById(R.id.signUpButton);
+//
+//        userVM.getAllUsers().observe(this, new Observer<List<User>>() {
+//            @Override
+//            public void onChanged(List<User> users) {
+//                if(users.size() >0){
+//                    userAdapter.setData(users);
+//                    recyclerView.setAdapter(userAdapter);
+//                }
+//            }
+//        });
+
+//        btnNewUsr.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                addUsers(SignUpPage.this);
+//            }
+//        });
 
 //        DisplayMetrics dm = new DisplayMetrics();
 //        getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -112,30 +119,44 @@ public class SignUpPage extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    private void observerSetup ( ) {
+    private void saveNewUser(String name, String email, String pass, String cfmPass){
+        UserRoomDatabase db = UserRoomDatabase.getDatabase(this.getApplicationContext());
 
+        User user =new User();
+        user.username = name;
+        user.email = email;
+        user.password = pass;
+        user.confirmPassword = cfmPass;
+        db.userDao().insertUser(user);
+
+        finish();
     }
 
-    public void addUsers(Context context){
-        View view1 = getLayoutInflater().inflate(R.layout.activity_sign_up_page, null);
 
-        Button addUsr = view1.findViewById(R.id.signUpButton);
-        addUsr.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                EditText edUsr = view1.findViewById(R.id.usernameSignUpPage);
-                EditText usrEmail = view1.findViewById(R.id.emailSignUpPage);
-                EditText usrPass = view1.findViewById(R.id.passwordSignUpPage);
-
-                User user =new User();
-                user.setUsername(edUsr.getText().toString());
-                user.setEmail(usrEmail.getText().toString());
-                user.setPassword(usrPass.getText().toString());
-
-                userVM.insertUser(user);
-            }
-        });
-
-}
+//    private void observerSetup ( ) {
+//
+//    }
+//
+//    public void addUsers(Context context){
+//        View view1 = getLayoutInflater().inflate(R.layout.activity_sign_up_page, null);
+//
+//        Button addUsr = view1.findViewById(R.id.signUpButton);
+//        addUsr.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                EditText edUsr = view1.findViewById(R.id.usernameSignUpPage);
+//                EditText usrEmail = view1.findViewById(R.id.emailSignUpPage);
+//                EditText usrPass = view1.findViewById(R.id.passwordSignUpPage);
+//
+//                User user =new User();
+//                user.setUsername(edUsr.getText().toString());
+//                user.setEmail(usrEmail.getText().toString());
+//                user.setPassword(usrPass.getText().toString());
+//
+//                userVM.insertUser(user);
+//            }
+//        });
+//
+//}
 
 }
