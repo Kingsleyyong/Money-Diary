@@ -5,24 +5,21 @@ public class income {
     private String incomeDesc;
     private double incomeAmt;
     private String incomeCate;
-    private String incomePic;
-    private String incomeLocation;
+    private String incomeDate;
 
-    public income(String incomeDesc, double incomeAmt, String incomeCate, String incomePic, String incomeLocation) {
+    public income(String incomeDesc, double incomeAmt, String incomeCate, String incomeDate) {
         this.incomeDesc = incomeDesc;
         this.incomeAmt = incomeAmt;
         this.incomeCate = incomeCate;
-        this.incomePic = incomePic;
-        this.incomeLocation = incomeLocation;
+        this.incomeDate = incomeDate;
     }
 
-    public income(int incomeID, String incomeDesc, double incomeAmt, String incomeCate, String incomePic, String incomeLocation) {
+    public income(int incomeID, String incomeDesc, double incomeAmt, String incomeCate, String incomeDate) {
         this.incomeID = incomeID;
         this.incomeDesc = incomeDesc;
         this.incomeAmt = incomeAmt;
         this.incomeCate = incomeCate;
-        this.incomePic = incomePic;
-        this.incomeLocation = incomeLocation;
+        this.incomeDate = incomeDate;
     }
 
     public int getincomeID() {
@@ -55,18 +52,11 @@ public class income {
     }
 
     public String getincomePic() {
-        return incomePic;
+        return incomeDate;
     }
 
     public void setincomePic(String incomePic) {
-        this.incomePic = incomePic;
+        this.incomeDate = incomePic;
     }
 
-    public String getincomeLocation() {
-        return incomeLocation;
-    }
-
-    public void setincomeLocation(String incomeLocation) {
-        this.incomeLocation = incomeLocation;
-    }
 }
