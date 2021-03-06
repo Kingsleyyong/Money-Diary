@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +25,10 @@ public class SignUpPage extends AppCompatActivity {
     RecyclerView recyclerView;
 
     Button btnNewUsr;
+
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +121,7 @@ public class SignUpPage extends AppCompatActivity {
             public void onClick(@NonNull View widget) {
                 //Please do something here to give performance for 'here' text.
                 Toast.makeText(SignUpPage.this, "Terms & Conditions Clicked", Toast.LENGTH_SHORT).show();
-
+                createNewTnCDialog();
             }
 
             //This is the style settings
@@ -137,15 +142,34 @@ public class SignUpPage extends AppCompatActivity {
 
             @Override
             public void onClick(@NonNull View widget) {
-                Toast.makeText(SignUpPage.this, "Privacy & Policy Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpPage.this, "Privacy Policy Clicked", Toast.LENGTH_SHORT).show();
+                createNewPnPDialog();
             }
         };
 
         ss.setSpan(clickableSpan1, 50, 68, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clickableSpan2, 73, 89, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan2, 73, 87, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    public void createNewTnCDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View tncpopup = getLayoutInflater().inflate(R.layout.tnc_popup,null);
+
+        dialogBuilder.setView(tncpopup);
+        dialog = dialogBuilder.create();
+        dialog.show();
+    }
+
+    public void createNewPnPDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View pnppopup = getLayoutInflater().inflate(R.layout.pnp_popup,null);
+
+        dialogBuilder.setView(pnppopup);
+        dialog = dialogBuilder.create();
+        dialog.show();
     }
 
 //<<<<<<< HEAD
