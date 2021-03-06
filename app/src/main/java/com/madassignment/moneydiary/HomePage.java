@@ -20,7 +20,7 @@ public class HomePage extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-
+    ImageView aboutus, feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +65,8 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.imageSettings).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(HomePage.this, SettingsActivity.class);
-                        startActivity(i);
+                        Toast.makeText(HomePage.this, "Settings ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        createNewSettingDialog();
                     }
                 });
 
@@ -88,6 +88,33 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(HomePage.this, addRecord.class);
                 startActivity(i);
+            }
+        });
+
+    }
+    public void createNewSettingDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View settingPopUp = getLayoutInflater().inflate(R.layout.setting_pop_up,null);
+
+
+        aboutus = (ImageView) settingPopUp.findViewById(R.id.aboutUsImage);
+        feedback = (ImageView) settingPopUp.findViewById(R.id.feedbackImage);
+
+        dialogBuilder.setView(settingPopUp);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomePage.this, "About Us", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomePage.this, "Feedback", Toast.LENGTH_SHORT).show();
             }
         });
     }

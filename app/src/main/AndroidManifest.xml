@@ -18,9 +18,6 @@
         android:theme="@style/Theme.MoneyDiary">
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".About_us"></activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
