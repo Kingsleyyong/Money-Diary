@@ -117,6 +117,8 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(HomePage.this, "Feedback", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(HomePage.this, Feedback.class);
+                startActivity(i);
             }
         });
     }

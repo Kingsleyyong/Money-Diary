@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -35,19 +34,19 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
 
-        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
+//        userVM = ViewModelProviders.of(this).get(UserViewModel.class);
         userAdapter = new UserAdapter();
         btnNewUsr = findViewById(R.id.signUpButton);
 
-        userVM.getAllUsers().observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-                if(users.size() >0){
-                    userAdapter.setData(users);
-                    recyclerView.setAdapter(userAdapter);
-                }
-            }
-        });
+//        userVM.getAllUsers().observe(this, new Observer<List<User>>() {
+//            @Override
+//            public void onChanged(List<User> users) {
+//                if(users.size() >0){
+//                    userAdapter.setData(users);
+//                    recyclerView.setAdapter(userAdapter);
+//                }
+//            }
+//        });
 
         btnNewUsr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +131,7 @@ public class SignUpPage extends AppCompatActivity {
                 user.setEmail(usrEmail.getText().toString());
                 user.setPassword(usrPass.getText().toString());
 
-                userVM.insertUser(user);
+//                userVM.insertUser(user);
             }
         });
 
