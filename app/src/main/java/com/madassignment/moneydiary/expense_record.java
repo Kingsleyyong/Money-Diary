@@ -1,15 +1,14 @@
 package com.madassignment.moneydiary;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.sql.Date;
-
 @Entity(tableName = "expense_records")
-//
+
 public class expense_record {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "expenseId")
@@ -21,9 +20,12 @@ public class expense_record {
     @ColumnInfo(name = "expensePrice")
     public float expense_price;
     @ColumnInfo(name = "expenseDate")
-    public View expense_date;
+    public String expense_date;
 
-    public expense_record(String category, String decs, float price, View expense_date) {
+    public expense_record( ) {
+    }
+
+    public expense_record(String category, String decs, float price, String expense_date) {
         this.expense_id = expense_id;
         this.expense_cate = category;
         this.expense_decs = decs;
@@ -43,10 +45,10 @@ public class expense_record {
     public float getPrice() {
         return this.expense_price;
     }
-    public View getDate() {
+    public String getDate() {
         return this.expense_date;
     }
-    public void setExpense_date(View expense_date) {
+    public void setExpense_date(String expense_date) {
         this.expense_date = expense_date;
     }
     public void setExpense_id(int expense_id) {

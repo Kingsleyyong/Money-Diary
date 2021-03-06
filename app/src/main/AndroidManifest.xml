@@ -31,7 +31,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".feedback2" />
         <activity android:name=".HomePage" />
         <activity android:name=".addRecord" />
         <activity

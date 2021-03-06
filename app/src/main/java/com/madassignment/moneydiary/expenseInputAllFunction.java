@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.sql.Date;
 
-public class expenseinputAllFunction extends AppCompatActivity {
+public class expenseInputAllFunction extends AppCompatActivity {
     private expenseviewmodel mViewModel;
     private ExpenselistAdapter adapter;
     private TextView expenseId;
@@ -37,16 +38,20 @@ public class expenseinputAllFunction extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_expense_input);
-        EditText money = findViewById(R.id.moneyInput);
+
+        EditText money = findViewById(R.id.moneyInput_Expense);
         Spinner category = (Spinner) findViewById(R.id.spinnerCategory_Expense);
         String category_text = category.getSelectedItem().toString();
-        View date = findViewById(R.id.editTextDate);
-        EditText decs = findViewById(R.id.description);
+        DatePicker picker = (DatePicker)findViewById(R.id.datePicker_Expense);
+        EditText decs = findViewById(R.id.description_Expense);
 
         Button saveButton = findViewById(R.id.signUpButton);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String date = picker.getDayOfMonth()+"/"+ (picker.getMonth() + 1)+"/"+picker.getYear();
+
                 new expense_record(category_text, decs.getText().toString(),
                         Float.parseFloat(String.valueOf(money.getText())), date);
             }

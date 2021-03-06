@@ -12,11 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/unlock"
-        android:text="@string/contact_us"
+        android:text="@string/feedback"
         android:textSize="58sp"
-        app:layout_constraintBottom_toTopOf="@+id/feedbackLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/feedbackLabel"
+        app:layout_constraintStart_toStartOf="@+id/feedbackLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -28,27 +27,25 @@
         android:text="@string/feel_free_to_drop_us_your_feedback"
         android:textAlignment="center"
         android:textSize="29sp"
-        app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout3"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout3"
         app:layout_constraintTop_toBottomOf="@+id/contactUsLabel" />
 
     <FrameLayout
         android:id="@+id/frameLayout3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="293dp"
+        android:layout_height="357dp"
+        android:layout_marginBottom="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feedbackLabel">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <androidx.fragment.app.FragmentContainerView
-            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
 
     </FrameLayout>

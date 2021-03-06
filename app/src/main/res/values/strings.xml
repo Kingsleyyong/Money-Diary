@@ -26,13 +26,7 @@
     <string name="made_by_mmu_diploma_students">Made by MMU Diploma Students.</string>
     <string name="total_income">Total Income</string>
     <string name="rm">RM </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="very_bad">Very Bad</string>
-    <string name="feedback">FeedBack</string>
-    <string name="submit_feedback">Submit Feedback</string>
-    <string name="enter_your_comment_here">Enter your comment here. . .</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -88,6 +82,7 @@
     <string name="feel_free_to_drop_us_your_feedback">Feel free to drop us your feedback</string>
     <string name="objectives">This is a project developed by a team of Diploma students in MMU Cyberjaya, Malaysia. We found out that most of the youth in the era down not have a good money management. We hope that by using our application, teenagers can notice what and how much they spend in their activities and improve their money management.</string>
     <string name="mmulogo">mmulogo</string>
+    <string name="feedback">FEEDBACK</string>
 
 
     <string-array name="incomeCategory">
