@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-//import com.madassignment.moneydiary.ui.ExpenseInputFragment;
+//import com.madassignment.moneydiary.ExpenseInputFragment;
 
 public class addRecord extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,7 +24,7 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
         expenseBtn.setOnClickListener(this);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        //ft.replace(R.id.frameLayout, new ExpenseInputFragment());
+        ft.replace(R.id.frameLayout, new ExpenseInputFragment());
         ft.commit();
     }
 
@@ -34,13 +34,13 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
         switch(v.getId()){
             case R.id.IncomeBtn:
                 Toast.makeText(this,"Income",Toast.LENGTH_SHORT).show();
-                //ft.replace(R.id.frameLayout, new IncomeInputFragment());
-                //ft.commit();
+                ft.replace(R.id.frameLayout, new IncomeInputFragment());
+                ft.commit();
                 break;
             case R.id.ExpenseBtn:
                 Toast.makeText(this,"Expense",Toast.LENGTH_SHORT).show();
-                //ft.replace(R.id.frameLayout, new ExpenseInputFragment());
-                //ft.commit();
+                ft.replace(R.id.frameLayout, new ExpenseInputFragment());
+                ft.commit();
                 break;
         }
     }
