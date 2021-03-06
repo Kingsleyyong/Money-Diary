@@ -95,17 +95,19 @@
 
 
     <string-array name="incomeCategory">
-        <item>Income Category 1</item>
-        <item>Income Category 2</item>
-        <item>Income Category 3</item>
-        <item>Income Category 4</item>
-        <item>Income Category 5</item>
+        <item>Full Time Job 1</item>
+        <item>Full Time Job 2</item>
+        <item>Part Time Job 1</item>
+        <item>Part Time Job 2</item>
+        <item>Investment</item>
     </string-array>
+
     <string-array name="expenseCategory">
-        <item>Expense Category 1</item>
-        <item>Expense Category 2</item>
-        <item>Expense Category 3</item>
-        <item>Expense Category 4</item>
-        <item>Expense Category 5</item>
+        <item>Groceries</item>
+        <item>Utilities</item>
+        <item>Transportation</item>
+        <item>Health</item>
+        <item>Other</item>
     </string-array>
+
 </resources>

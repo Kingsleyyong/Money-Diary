@@ -21,13 +21,13 @@
                 android:layout_marginStart="10dp"
                 android:text="@string/rm"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/moneyInput"
-                app:layout_constraintStart_toStartOf="@+id/moneyInput"
-                app:layout_constraintTop_toTopOf="@+id/moneyInput"
+                app:layout_constraintBottom_toBottomOf="@+id/moneyInput_Expense"
+                app:layout_constraintStart_toStartOf="@+id/moneyInput_Expense"
+                app:layout_constraintTop_toTopOf="@+id/moneyInput_Expense"
                 app:layout_constraintVertical_bias="0.562" />
 
             <EditText
-                android:id="@+id/moneyInput"
+                android:id="@+id/moneyInput_Expense"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
@@ -42,16 +42,14 @@
                 app:layout_constraintStart_toStartOf="@+id/spinnerCategory_Expense"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editTextDate"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:autofillHints="Date"
-                android:ems="10"
-                android:inputType="date"
+
+            <DatePicker
+                android:id="@+id/datePicker_Expense"
+                android:layout_width="392dp"
+                android:layout_height="234dp"
+                android:layout_marginTop="36dp"
+                android:datePickerMode="spinner"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerCategory_Expense" />
 
@@ -59,14 +57,14 @@
                 android:id="@+id/textInputLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="48dp"
                 app:layout_constraintEnd_toEndOf="@+id/SubmitRecord_Expense"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/SubmitRecord_Expense"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDate">
+                app:layout_constraintTop_toBottomOf="@+id/datePicker_Expense">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/description"
+                    android:id="@+id/description_Expense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/description" />
@@ -76,7 +74,7 @@
                 android:id="@+id/SubmitRecord_Expense"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="29dp"
                 android:text="@string/save_record"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,11 +84,10 @@
                 android:id="@+id/spinnerCategory_Expense"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                app:layout_constraintEnd_toEndOf="@+id/editTextDate"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editTextDate"
-                app:layout_constraintTop_toBottomOf="@+id/moneyInput" />
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="@+id/datePicker_Expense"
+                app:layout_constraintStart_toStartOf="@+id/datePicker_Expense"
+                app:layout_constraintTop_toBottomOf="@+id/moneyInput_Expense" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
