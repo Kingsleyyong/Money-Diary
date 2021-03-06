@@ -65,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="70dp"
+                    android:onClick="to_setting"
                     android:background="@null"
                     android:contentDescription="@string/todo"
                     android:src="@mipmap/settings_foreground" />
