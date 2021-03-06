@@ -36,12 +36,20 @@
 //
 //    @NonNull
 //    @Override
-//    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+//    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //        View view = LayoutInflater.from(
 //                parent.getContext()).inflate(userLayout, parent, false);
-//        return new ViewHolder(view);
+//        return new RecyclerView.ViewHolder(view);
 //    }
 //
+//
 //    @Override
-//    public void onBindViewHolder(final RecyclerView.ViewHolder holder)
+//    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int listPosition) {
+//        TextView userRow;
+//        RecyclerView.ViewHolder(View userRowView) {
+//            super(userRowView);
+////            userRow = userRowView.findViewById(R.id.user_row); should connect to which element
+//        }
+//
+//    }
 //}
