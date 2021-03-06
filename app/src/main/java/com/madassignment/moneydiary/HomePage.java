@@ -67,7 +67,8 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.imageSettings).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Settings ImageButton Clicked", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(HomePage.this, SettingsActivity.class);
+                        startActivity(i);
                     }
                 });
 
@@ -91,7 +92,6 @@ public class HomePage extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
 
 
