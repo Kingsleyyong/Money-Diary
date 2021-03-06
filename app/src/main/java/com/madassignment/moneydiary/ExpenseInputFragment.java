@@ -6,8 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.widget.ArrayAdapter;
-
-//import com.madassignment.moneydiary.expense_record;
+import com.madassignment.moneydiary.ui.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +22,8 @@ import androidx.lifecycle.ViewModelProvider;
  * create an instance of this fragment.
  */
 public class ExpenseInputFragment extends Fragment {
-//    private expenseviewmodel mViewModel;
-//    private ExpenselistAdapter adapter;
+    private expenseviewmodel mViewModel;
+    private ExpenselistAdapter adapter;
     private TextView expenseId;
     private EditText expenseDecs;
     private EditText expenseName;
@@ -83,13 +82,4 @@ public class ExpenseInputFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-//        mViewModel = new ViewModelProvider(this).get(expenseviewmodel.class);
-//        expenseId = getView().findViewById(R.id.productID);
-//        productName = getView().findViewById(R.id.productName);
-//        productQuantity = getView().findViewById(R.id.productQuantity);
-//        listenerSetup();
-    }
 }
