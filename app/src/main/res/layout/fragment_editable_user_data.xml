@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditableUserData">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/emailSignUpPage3"
+            app:layout_constraintEnd_toStartOf="@+id/emailSignUpPage3"
+            app:layout_constraintTop_toTopOf="@+id/emailSignUpPage3"
+            app:srcCompat="@drawable/mail_logo" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/usernameSignUpPage3"
+            app:layout_constraintEnd_toStartOf="@+id/usernameSignUpPage3"
+            app:layout_constraintTop_toTopOf="@+id/usernameSignUpPage3"
+            app:srcCompat="@drawable/person_logo" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/reconfirmPasswordSignUpPage3"
+            app:layout_constraintEnd_toStartOf="@+id/reconfirmPasswordSignUpPage3"
+            app:layout_constraintTop_toTopOf="@+id/reconfirmPasswordSignUpPage3"
+            app:srcCompat="@drawable/password_logo" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordSignUpPage3"
+            app:layout_constraintEnd_toStartOf="@+id/passwordSignUpPage3"
+            app:layout_constraintTop_toTopOf="@+id/passwordSignUpPage3"
+            app:srcCompat="@drawable/password_logo" />
+
+        <EditText
+            android:id="@+id/usernameSignUpPage3"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="80dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/sysLightBlue"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.77"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/emailSignUpPage3"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/sysLightBlue"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.77"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameSignUpPage3" />
+
+        <EditText
+            android:id="@+id/passwordSignUpPage3"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/sysLightBlue"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.77"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailSignUpPage3" />
+
+        <EditText
+            android:id="@+id/reconfirmPasswordSignUpPage3"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/sysLightBlue"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/reconfirm_password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.77"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordSignUpPage3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -12,14 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpPage extends AppCompatActivity {
 
-    UserDatabase mDatabaseHelper;
-    private EditText username, email, password, confirmPassword;
-    private Button signUpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +36,6 @@ public class SignUpPage extends AppCompatActivity {
 //        params.x = 0;
 //        params.y = 0;
 //        getWindow().setAttributes(params);
-
-        username = (EditText) findViewById(R.id.usernameSignUpPage);
-        email = (EditText) findViewById(R.id.emailSignUpPage);
-        password = (EditText) findViewById(R.id.passwordSignUpPage);
-        confirmPassword = (EditText) findViewById(R.id.reconfirmPasswordSignUpPage);
-        signUpBtn = (Button) findViewById(R.id.signUpButton);
-        mDatabaseHelper = new UserDatabase(this);
-
-
-
 
 
         TextView textView = findViewById(R.id.textViewSignUpPage);
@@ -90,18 +79,4 @@ public class SignUpPage extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-    public void AddData(String name, String mail, String pw, String cfpw) {
-        boolean insertData = mDatabaseHelper.addData(name,mail,pw,cfpw);
-
-        if(insertData) {
-            toastMessage("Data Successfully Inserted");
-        }
-        else {
-            toastMessage("Something went wrong");
-        }
-    }
-
-    private void toastMessage (String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
 }
