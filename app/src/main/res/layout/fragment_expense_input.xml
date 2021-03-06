@@ -45,8 +45,8 @@
 
             <DatePicker
                 android:id="@+id/datePicker_Expense"
-                android:layout_width="392dp"
-                android:layout_height="234dp"
+                android:layout_width="330dp"
+                android:layout_height="290dp"
                 android:layout_marginTop="36dp"
                 android:datePickerMode="spinner"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout"

@@ -16,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -45,7 +46,7 @@ public class expenseInputAllFunction extends AppCompatActivity {
         DatePicker picker = (DatePicker)findViewById(R.id.datePicker_Expense);
         EditText decs = findViewById(R.id.description_Expense);
 
-        Button saveButton = findViewById(R.id.signUpButton);
+        Button saveButton = findViewById(R.id.ExpenseBtn);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,8 @@ public class expenseInputAllFunction extends AppCompatActivity {
 
                 new expense_record(category_text, decs.getText().toString(),
                         Float.parseFloat(String.valueOf(money.getText())), date);
+
+                Toast.makeText(expenseInputAllFunction.this, date, Toast.LENGTH_SHORT).show();
             }
         });
     }

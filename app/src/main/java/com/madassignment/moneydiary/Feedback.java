@@ -40,7 +40,6 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
         String fbTxt = "Feel free to drop us your feedback.";
         SpannableString spanFb = new SpannableString(fbTxt);
 
-
 //        Bundle mapViewBundle = null;
 //
 //        if(savedInstanceState != null) {
@@ -94,13 +93,13 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
 //        super.onResume();
 //        mMapView.onResume();
 //    }
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        mMapView.onStart();
-//    }
-//
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mMapView.onStart();
+    }
+
 //    @Override
 //    public void onStop() {
 //        super.onStop();
