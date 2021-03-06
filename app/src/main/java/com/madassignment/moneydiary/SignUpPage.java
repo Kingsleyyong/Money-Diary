@@ -129,6 +129,7 @@ public class SignUpPage extends AppCompatActivity {
         user.confirmPassword = cfmPass;
         db.userDao().insertUser(user);
 
+        Toast.makeText(SignUpPage.this, "Successfully Registered!", Toast.LENGTH_SHORT).show();
         finish();
     }
 
