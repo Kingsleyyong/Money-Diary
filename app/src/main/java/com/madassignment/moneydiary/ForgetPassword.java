@@ -1,21 +1,12 @@
 package com.madassignment.moneydiary;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.net.Uri;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ForgetPassword extends AppCompatActivity {
@@ -44,13 +35,16 @@ public class ForgetPassword extends AppCompatActivity {
                     public void onClick(View v){
                         EditText resetEmail = findViewById(R.id.emailForReset);
                         String rsEmail = resetEmail.getText().toString();
+                        UserRoomDatabase db = UserRoomDatabase.getDatabase(getApplicationContext());
+                        final UserDao userDao = db.userDao();
+                        User user = userDao.CheckUser(rsEmail);
 
                         if(rsEmail.equals("") || rsEmail == null) {
                             Toast.makeText(ForgetPassword.this, "Please insert an email", Toast.LENGTH_SHORT).show();
                         }
-//                        else if( ){
-//                            email not existing
-//                        }
+                        else if(user == null){
+                            Toast.makeText(getApplicationContext(), "User does not exist", Toast.LENGTH_SHORT).show();
+                        }
                         else {
                             resetPwBtn.setEnabled(false);
 
