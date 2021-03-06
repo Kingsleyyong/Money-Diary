@@ -51,9 +51,15 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
 //
 //        mMapView.getMapAsync(this);
 
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        SupportMapFragment mapFragment = SupportMapFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.frameLayout3, mapFragment)
+                .commit();
+
+//        SupportMapFragment mapFragment =
+//                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+//        mapFragment.getMapAsync(this);
 
 
         ClickableSpan clickableSpan1 = new ClickableSpan() {
@@ -94,11 +100,11 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
 //        mMapView.onResume();
 //    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        mMapView.onStart();
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        mMapView.onStart();
+//    }
 
 //    @Override
 //    public void onStop() {

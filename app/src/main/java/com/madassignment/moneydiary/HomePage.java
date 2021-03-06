@@ -16,6 +16,8 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import android.content.DialogInterface;
+
 public class HomePage extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
@@ -58,6 +60,26 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
+                        builder.setTitle("Confirmation PopUp").
+                                setMessage("You sure that you want to logout?");
+                        builder.setPositiveButton("Yes",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        Intent i = new Intent(getApplicationContext(),
+                                                SignInPage.class);
+                                        startActivity(i);
+                                    }
+                                });
+                        builder.setNegativeButton("No",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     }
                 });
 
