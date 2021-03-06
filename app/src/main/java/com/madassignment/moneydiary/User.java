@@ -1,6 +1,5 @@
 package com.madassignment.moneydiary;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -26,13 +25,13 @@ public class User {
     @ColumnInfo(name = "userCfPw")
     private String confirmPassword;
 
-    public User(String username, String email, String password, String confirmPassword) {
-        this.UID = UID;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-    }
+//    public User(String username, String email, String password, String confirmPassword) {
+//        this.UID = UID;
+//        this.username = username;
+//        this.email = email;
+//        this.password = password;
+//        this.confirmPassword = confirmPassword;
+//    }
 
     public int getUID( ) {                  return this.UID;                }
     public String getUsername( ) {          return this.username;           }
