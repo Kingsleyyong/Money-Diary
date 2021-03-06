@@ -1,6 +1,8 @@
 package com.madassignment.moneydiary;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -8,6 +10,7 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +36,6 @@ public class ForgetPassword extends AppCompatActivity {
 //        params.y = 0;
 //        getWindow().setAttributes(params);
 
-        //For clickable text in a textfield, please watch:
-        //https://www.youtube.com/watch?v=E4xSjGZWR3E
         TextView textView = findViewById(R.id.sendCodeStatement);
         String text = "Did not received? Click here to send a code again after 60 seconds.";
         SpannableString ss = new SpannableString(text);
@@ -58,5 +59,22 @@ public class ForgetPassword extends AppCompatActivity {
 
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
+
+
+//        Intent intent = new Intent(Intent.ACTION_SEND);
+//        intent.setData(Uri.parse("mailto:"));
+//        intent.setType("text/plain");
+//        intent.putExtra(Intent.EXTRA_EMAIL, String.valueOf(resetPWMail));
+//        intent.putExtra(Intent.EXTRA_SUBJECT, "Money Diary Reset Password");
+//        intent.putExtra(Intent.EXTRA_TEXT, "Your password had been reset to ABC123. Please reset your password after logging in.");
+//
+//        try {
+//            startActivity(Intent.createChooser(intent, "Send mail..."));
+//            finish();
+//        } catch (android.content.ActivityNotFoundException ex) {
+//            Toast.makeText(ForgetPassword.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+//        }
+
 }
