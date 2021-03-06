@@ -35,12 +35,12 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
             case R.id.IncomeBtn:
                 Toast.makeText(this,"Income",Toast.LENGTH_SHORT).show();
                 //ft.replace(R.id.frameLayout, new IncomeInputFragment());
-                ft.commit();
+                //ft.commit();
                 break;
             case R.id.ExpenseBtn:
                 Toast.makeText(this,"Expense",Toast.LENGTH_SHORT).show();
                 //ft.replace(R.id.frameLayout, new ExpenseInputFragment());
-                ft.commit();
+                //ft.commit();
                 break;
         }
     }

@@ -2,18 +2,25 @@
 //
 //import android.os.Bundle;
 //
+//import androidx.annotation.NonNull;
 //import androidx.annotation.Nullable;
 //import androidx.fragment.app.Fragment;
-//import androidx.lifecycle.ViewModelProvider;
 //
+//import android.widget.ArrayAdapter;
+//import android.widget.Button;
+//import com.madassignment.moneydiary.expense_record;
 //import android.view.LayoutInflater;
 //import android.view.View;
 //import android.view.ViewGroup;
-//import android.widget.ArrayAdapter;
-//import android.widget.Spinner;
 //import android.widget.EditText;
+//import android.widget.Spinner;
 //import android.widget.TextView;
 //import com.madassignment.moneydiary.R;
+//import androidx.lifecycle.Observer;
+//import java.util.List;
+//import java.util.Locale;
+//import androidx.recyclerview.widget.LinearLayoutManager;
+//import androidx.recyclerview.widget.RecyclerView;
 //
 ///**
 // * A simple {@link Fragment} subclass.
@@ -72,12 +79,11 @@
 //                             Bundle savedInstanceState) {
 //
 //        View view = inflater.inflate(R.layout.fragment_expense_input, container, false);
-//        Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_Expense);
+//        Spinner mySpinner = (Spinner) view.findViewById(R.id.spinnerCategory_Expense);
 //        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),
 //                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.expenseCategory));
 //        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        mySpinner.setAdapter(myAdapter);
-//
 //        // Inflate the layout for this fragment
 //        return view;
 //    }
@@ -90,4 +96,5 @@
 //        productName = getView().findViewById(R.id.productName);
 //        productQuantity = getView().findViewById(R.id.productQuantity);
 //        listenerSetup();
+//    }
 //}
