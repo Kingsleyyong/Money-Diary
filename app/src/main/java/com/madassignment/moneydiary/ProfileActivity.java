@@ -15,9 +15,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
 
-        Button editBtn = findViewById(R.id.editProfileBtn);
+        edtBtn = findViewById(R.id.editProfileBtn);
         subBtn = findViewById(R.id.submitBtn);
-        editBtn.setOnClickListener(this);
+        edtBtn.setOnClickListener(this);
         subBtn.setOnClickListener(this);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout2, new NonEditableUserData());
@@ -28,10 +28,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if(v.getId() == R.id.editProfileBtn){
-            edtBtn = findViewById(R.id.editProfileBtn);
             edtBtn.setVisibility(View.GONE);
-
-            subBtn = findViewById(R.id.submitBtn);
             subBtn.setVisibility(View.VISIBLE);
 
             ft.replace(R.id.frameLayout2, new EditableUserData());
@@ -39,10 +36,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
 
         if(v.getId() == R.id.submitBtn){
-            edtBtn = findViewById(R.id.editProfileBtn);
             edtBtn.setVisibility(View.VISIBLE);
-
-            subBtn = findViewById(R.id.submitBtn);
             subBtn.setVisibility(View.GONE);
 
             ft.replace(R.id.frameLayout2, new NonEditableUserData());
