@@ -1,6 +1,5 @@
 package com.madassignment.moneydiary;
 
-import android.app.Application;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -104,20 +103,19 @@ public class ExpenseInputFragment extends Fragment {
                 Expense_record_dao dao = new Expense_record_dao(getContext());
                 boolean yay = true;
 
-                if (desc.getText().toString().matches("")){
+                if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){
                     yay = false;
+                    Toast.makeText(getContext(),"Enter Every Information!",Toast.LENGTH_LONG).show();
                 }
-
-                if (yay) {
+                else
+                {
                     expense_record rec = new expense_record(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString(), userID);
                     yay = dao.addOne(rec);
-                }
+                    if(yay){
+                        Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
+                        getActivity().finish();
+                    }
 
-                if (yay){
-                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
-                    getActivity().finish();
-                } else if (!yay){
-                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
                 }
 
             }

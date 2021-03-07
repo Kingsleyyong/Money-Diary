@@ -114,22 +114,20 @@ public class IncomeInputFragment extends Fragment {
                 incomeDAO dao = new incomeDAO(getContext());
                 boolean yay = true;
 
-                if (desc.getText().toString().matches("")){
+                if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){
                     yay = false;
+                    Toast.makeText(getContext(),"Enter Every Information!",Toast.LENGTH_LONG).show();
                 }
-
-                if (yay) {
+                else
+                {
                     income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString(), userID);
                     yay = dao.addOne(rec);
-                }
+                    if(yay){
+                        Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
+                        getActivity().finish();
+                    }
 
-                if (yay){
-                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
-                    getActivity().finish();
-                } else if (!yay){
-                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 
