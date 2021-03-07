@@ -45,6 +45,7 @@ public class ExpenseRecAdapter extends RecyclerView.Adapter<ExpenseRecAdapter.Vi
         holder.delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dao.deleteOne(expenseList.get(position).getExpense_id());
+                notifyDataSetChanged();
             }
         });
 
