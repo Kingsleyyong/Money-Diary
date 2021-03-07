@@ -24,7 +24,7 @@
     <string name="action_settings">Settings</string>
     <string name="log_out">Log Out</string>
     <string name="made_by_mmu_diploma_students">Made by MMU Diploma Students.</string>
-    <string name="total_income">Total Income</string>
+    <string name="total_income">Total Income: </string>
     <string name="rm">RM </string>
 
 
@@ -73,7 +73,7 @@
     <string name="send_email">SEND EMAIL</string>
     <string name="get_new_password">get new password</string>
     <string name="our_members">Our Members</string>
-    <string name="total_expense">Total Expense</string>
+    <string name="total_expense">Total Expense: </string>
     <string name="category_name">Category Name</string>
     <string name="dd_mm_yy">dd/mm/yy</string>
     <string name="_0_00">0.00</string>

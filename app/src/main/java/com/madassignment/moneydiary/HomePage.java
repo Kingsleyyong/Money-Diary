@@ -45,7 +45,8 @@ public class HomePage extends AppCompatActivity {
         incomeDAO incomedao = new incomeDAO(this);
 
         TextView totalincome = findViewById(R.id.incomeNumber);
-        totalincome.setText((Double.toString(incomedao.totalIncome())));
+
+        totalincome.setText(String.format("%.2f", incomedao.totalIncome()));
 
         incomeRecycler = findViewById(R.id.incomeRec);
         incomeRecAdapter = new incomeRecAdapter();
@@ -84,13 +85,13 @@ public class HomePage extends AppCompatActivity {
                         Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
-                        builder.setTitle("Confirmation PopUp").
-                                setMessage("You sure that you want to logout?");
+                        builder.setTitle("Confirmation: ").
+                                setMessage("Are you sure to proceed log out?");
                         builder.setPositiveButton("Yes",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent i = new Intent(getApplicationContext(),
-                                                SignInPage.class);
+                                                LoadingScreen.class);
                                         startActivity(i);
                                     }
                                 });
@@ -150,5 +151,30 @@ public class HomePage extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
+        builder.setTitle("Confirmation PopUp").
+                setMessage("You sure that you want to logout?");
+        builder.setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent i = new Intent(getApplicationContext(),
+                                SignInPage.class);
+                        startActivity(i);
+                    }
+                });
+        builder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 }

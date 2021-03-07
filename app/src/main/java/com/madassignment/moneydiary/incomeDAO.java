@@ -54,10 +54,10 @@ public class incomeDAO extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean deleteOne(income oldincome) {
+    public boolean deleteOne(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        int delete = db.delete(incomeDB, ("ID=" + oldincome.getincomeID()), null);
+        int delete = db.delete(incomeDB, "incomeID=" + id, null);
 
         if (delete == 0) {
             return false;
