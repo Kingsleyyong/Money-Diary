@@ -9,10 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +24,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class IncomeInputFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +64,8 @@ public class IncomeInputFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -66,13 +73,37 @@ public class IncomeInputFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_income_input, container, false);
-        Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_Income);
+        Spinner mySpinner =  view.findViewById(R.id.spinnerCategory_Income);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.incomeCategory));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
+        Button submit = view.findViewById(R.id.SubmitRecord_Income);
+        DatePicker date = view.findViewById(R.id.datePicker_Income);
+        EditText money = view.findViewById(R.id.moneyInput_Income);
+        EditText desc = view.findViewById(R.id.description_Income);
+        long datep = date.getCalendarView().getDate();
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                incomeDAO dao = new incomeDAO(getContext());
+                income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(),datep);
+
+                boolean yay = dao.addOne(rec);
+
+                if (yay){
+                    Toast.makeText(getContext(),"SUCCESS",Toast.LENGTH_SHORT).show();
+                } else if (!yay){
+                    Toast.makeText(getContext(),"FAILURE",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
     }
+
+
 }
