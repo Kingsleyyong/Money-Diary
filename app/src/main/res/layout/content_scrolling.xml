@@ -21,8 +21,10 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/homecard_bg_shadow"
             android:elevation="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -77,22 +79,28 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/incomeRec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewIncomeTotal" />
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewIncomeTotal"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/record_income_expense" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="50dp"
             android:layout_marginEnd="30dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/homecard_bg_shadow"
             android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -150,7 +158,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewExpenseTotal" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewExpenseTotal"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/recycler_view_item_1" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

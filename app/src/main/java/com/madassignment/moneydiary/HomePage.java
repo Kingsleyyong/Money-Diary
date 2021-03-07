@@ -1,5 +1,6 @@
 package com.madassignment.moneydiary;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -23,6 +26,9 @@ public class HomePage extends AppCompatActivity {
     private AlertDialog dialog;
     ImageView aboutus, feedback;
     TextView usrname;
+
+    RecyclerView incomeRecycler;
+    incomeRecAdapter incomeRecAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,12 @@ public class HomePage extends AppCompatActivity {
 
         TextView totalincome = findViewById(R.id.incomeNumber);
         totalincome.setText((Double.toString(incomedao.totalIncome())));
+
+        incomeRecycler = findViewById(R.id.incomeRec);
+        incomeRecAdapter = new incomeRecAdapter();
+        incomeRecAdapter.setCtx(this);
+
+        incomeRecycler.setAdapter(incomeRecAdapter);
 
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +120,7 @@ public class HomePage extends AppCompatActivity {
         });
 
     }
+
     public void createNewSettingDialog(){
         dialogBuilder = new AlertDialog.Builder(this);
         final View settingPopUp = getLayoutInflater().inflate(R.layout.setting_pop_up,null);

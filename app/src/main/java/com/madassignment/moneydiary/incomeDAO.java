@@ -27,7 +27,7 @@ public class incomeDAO extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + incomeDB +"("+ incomeID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ incomeDesc + " TEXT, " + incomeAmt +" DOUBLE, " + incomeCate + " TEXT, " + incomeDate + " TEXT" + ")";
+        String createTableStatement = "CREATE TABLE " + incomeDB +"("+ incomeID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ incomeDesc + " TEXT, " + incomeAmt +" REAL, " + incomeCate + " TEXT, " + incomeDate + " INTEGER" + ")";
 
         db.execSQL(createTableStatement);
     }
@@ -72,7 +72,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
             list.add(q);
         }
 
@@ -88,7 +88,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, " " + incomeCate + "=" + cate, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
             list.add(q);
         }
         result.close();
@@ -104,6 +104,23 @@ public class incomeDAO extends SQLiteOpenHelper {
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += result.getDouble(2);
         }
+
+        result.close();
+
+        return total;
+    }
+
+    public int totalNumber(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int total = 0;
+        Cursor result = db.query(incomeDB, new String[]{incomeID}, null, null, null, null, null, null);
+
+        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
+            total += 1;
+        }
+
+        result.close();
+
         return total;
     }
 }

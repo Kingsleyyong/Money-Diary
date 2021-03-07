@@ -18,37 +18,51 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:text="@string/rm"
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="@+id/moneyInput_Income"
                 app:layout_constraintStart_toStartOf="@+id/moneyInput_Income"
-                app:layout_constraintTop_toTopOf="@+id/moneyInput_Income"
-                app:layout_constraintVertical_bias="0.562" />
+                app:layout_constraintTop_toTopOf="@+id/moneyInput_Income" />
 
             <EditText
                 android:id="@+id/moneyInput_Income"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="40dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:text="@string/_0_00"
                 android:textAlignment="viewEnd"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="@+id/spinnerCategory_Income"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/spinnerCategory_Income"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <DatePicker
+            <Spinner
+                android:id="@+id/spinnerCategory_Income"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moneyInput_Income" />
+
+            <EditText
                 android:id="@+id/datePicker_Income"
-                android:layout_width="330dp"
-                android:layout_height="290dp"
-                android:layout_marginTop="36dp"
-                android:datePickerMode="spinner"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="#d4d4d4"
+                android:gravity="center"
+                android:hint="@string/select_date"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout"
                 app:layout_constraintTop_toBottomOf="@+id/spinnerCategory_Income" />
@@ -57,9 +71,8 @@
                 android:id="@+id/textInputLayout"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintEnd_toEndOf="@+id/SubmitRecord_Income"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/SubmitRecord_Income"
                 app:layout_constraintTop_toBottomOf="@+id/datePicker_Income">
 
@@ -74,20 +87,11 @@
                 android:id="@+id/SubmitRecord_Income"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
+                android:layout_marginTop="50dp"
                 android:text="@string/save_record"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
-            <Spinner
-                android:id="@+id/spinnerCategory_Income"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="@+id/datePicker_Income"
-                app:layout_constraintStart_toStartOf="@+id/datePicker_Income"
-                app:layout_constraintTop_toBottomOf="@+id/moneyInput_Income" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

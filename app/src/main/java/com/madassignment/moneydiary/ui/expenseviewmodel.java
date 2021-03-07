@@ -23,7 +23,7 @@ public class expenseviewmodel extends AndroidViewModel{
     MutableLiveData<List<expense_record>> getSearchResults() {
         return searchResults;
     }
-    LiveData<List<expense_record>> getAllRecords() {
+    public LiveData<List<expense_record>> getAllRecords() {
         return allRecords;
     }
     public void insertRecord(expense_record record) {
