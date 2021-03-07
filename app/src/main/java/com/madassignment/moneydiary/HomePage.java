@@ -205,5 +205,6 @@ public class HomePage extends AppCompatActivity {
         super.onResume();
 
         incomeRecAdapter.notifyDataSetChanged();
+        expenseRecAdapter.notifyDataSetChanged();
     }
 }
