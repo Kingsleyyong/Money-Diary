@@ -6,20 +6,23 @@ public class income {
     private double incomeAmt;
     private String incomeCate;
     private String incomeDate;
+    private int userID;
 
-    public income(String incomeDesc, double incomeAmt, String incomeCate, String incomeDate) {
+    public income(String incomeDesc, double incomeAmt, String incomeCate, String incomeDate, int userID) {
         this.incomeDesc = incomeDesc;
         this.incomeAmt = incomeAmt;
         this.incomeCate = incomeCate;
         this.incomeDate = incomeDate;
+        this.userID = userID;
     }
 
-    public income(int incomeID, String incomeDesc, double incomeAmt, String incomeCate, String incomeDate) {
+    public income(int incomeID, String incomeDesc, double incomeAmt, String incomeCate, String incomeDate, int userID) {
         this.incomeID = incomeID;
         this.incomeDesc = incomeDesc;
         this.incomeAmt = incomeAmt;
         this.incomeCate = incomeCate;
         this.incomeDate = incomeDate;
+        this.userID = userID;
     }
 
     public int getincomeID() {
@@ -30,32 +33,18 @@ public class income {
         return incomeDesc;
     }
 
-    public void setincomeDesc(String incomeDesc) {
-        this.incomeDesc = incomeDesc;
-    }
-
     public double getincomeAmt() {
         return incomeAmt;
-    }
-
-    public void setincomeAmt(double incomeAmt) {
-        this.incomeAmt = incomeAmt;
     }
 
     public String getincomeCate() {
         return incomeCate;
     }
 
-    public void setincomeCate(String incomeCate) {
-        this.incomeCate = incomeCate;
-    }
-
     public String getincomeDate() {
         return incomeDate;
     }
 
-    public void setincomeDate(String incomeDate) {
-        this.incomeDate = incomeDate;
-    }
+    public int getUserID() {return userID;}
 
 }
