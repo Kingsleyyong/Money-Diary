@@ -46,8 +46,6 @@ public class HomePage extends AppCompatActivity {
         String uid = getIntent().getStringExtra("uid");
         userID = Integer.parseInt(uid);
 
-        Toast.makeText(this,uid, Toast.LENGTH_SHORT).show();
-
         // Expense setup
         Expense_record_dao expensedao = new Expense_record_dao(this);
 
@@ -88,7 +86,7 @@ public class HomePage extends AppCompatActivity {
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
 
-                        Intent profile = new Intent(getApplicationContext(), ProfileActivity.class).putExtra("name",name);
+                        Intent profile = new Intent(getApplicationContext(), ProfileActivity.class).putExtra("uid",uid);
                         startActivity(profile);
                     }
                 });
@@ -141,7 +139,6 @@ public class HomePage extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
 
     public void createNewSettingDialog(){
@@ -203,7 +200,7 @@ public class HomePage extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-
+        expenseRecAdapter.notifyDataSetChanged();
         incomeRecAdapter.notifyDataSetChanged();
     }
 }

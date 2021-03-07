@@ -13,15 +13,14 @@ import androidx.fragment.app.FragmentTransaction;
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button edtBtn,subBtn;
-    String LoggedName;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
 
-        LoggedName = getIntent().getStringExtra("name");
-//        Toast.makeText(this, LoggedName, Toast.LENGTH_SHORT).show();
+        uid = getIntent().getStringExtra("uid");
 
         edtBtn = findViewById(R.id.editProfileBtn);
         subBtn = findViewById(R.id.submitBtn);

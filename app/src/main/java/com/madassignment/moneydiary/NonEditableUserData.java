@@ -1,5 +1,6 @@
 package com.madassignment.moneydiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -25,6 +26,9 @@ public class NonEditableUserData extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    public static String userID;
+    int uid;
 
     public NonEditableUserData() {
         // Required empty public constructor
@@ -52,15 +56,44 @@ public class NonEditableUserData extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam1 = getArguments().getString(ARG_PARAM1, "");
+            mParam2 = getArguments().getString(ARG_PARAM2, "");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_non_editable_user_data, container, false);
+
+        userID = getActivity().getIntent().getStringExtra("userID");
+
+        TextView name = view.findViewById(R.id.viewProfileName);
+        TextView email = view.findViewById(R.id.viewProfileEmail);
+
+//        uid = Integer.parseInt(userID);
+
+        Toast.makeText(getContext(), userID, Toast.LENGTH_SHORT).show();
+//
+//
+//        UserRoomDatabase db = UserRoomDatabase.getDatabase(getContext());
+//        final UserDao userDao = db.userDao();
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                User user = userDao.UserById(uid);
+//
+//                String dbName = user.username;
+//                String dbEmail = user.email;
+//
+//                name.setText(dbName);
+//                email.setText(dbEmail);
+//            }
+//        }).start();
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_non_editable_user_data, container, false);
+        return view;
     }
 }
