@@ -45,7 +45,8 @@ public class HomePage extends AppCompatActivity {
         incomeDAO incomedao = new incomeDAO(this);
 
         TextView totalincome = findViewById(R.id.incomeNumber);
-        totalincome.setText((Double.toString(incomedao.totalIncome())));
+
+        totalincome.setText(String.format("%.2f", incomedao.totalIncome()));
 
         incomeRecycler = findViewById(R.id.incomeRec);
         incomeRecAdapter = new incomeRecAdapter();

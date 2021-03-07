@@ -42,10 +42,10 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
         holder.date.setText(incomeList.get(position).getincomeDate());
         holder.desc.setText(incomeList.get(position).getincomeDesc());
         holder.cate.setText(incomeList.get(position).getincomeCate());
-        holder.amt.setText(Double.toString(incomeList.get(position).getincomeAmt()));
+        holder.amt.setText(String.format("%.2f", incomeList.get(position).getincomeAmt()));
         holder.delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                dao.deleteOne(position+1);
+                dao.deleteOne(incomeList.get(position).getincomeID());
             }
         });
 
