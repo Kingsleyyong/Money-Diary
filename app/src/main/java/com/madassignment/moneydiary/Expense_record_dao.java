@@ -19,6 +19,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
     private static final String expenseAmt = "expenseAmt";
     private static final String expenseCate = "expenseCate";
     private static final String expenseDate = "expenseDate";
+    private static final String userID = "userID";
 
     public Expense_record_dao(@Nullable Context context) {
         super(context, "moneydiary_expense.db", null, 1);
@@ -31,7 +32,8 @@ public class Expense_record_dao extends SQLiteOpenHelper {
                 expenseDesc + " TEXT, "
                 + expenseAmt +" REAL, "
                 + expenseCate + " TEXT, "
-                + expenseDate + " INTEGER" + ")";
+                + expenseDate + " INTEGER, "
+                + userID +  " INTEGER)";
 
         db.execSQL(createTableStatement);
     }
@@ -49,6 +51,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
         cv.put(expenseAmt, newExpense.getPrice());
         cv.put(expenseCate, newExpense.getCategory());
         cv.put(expenseDate, newExpense.getDate());
+        cv.put(userID, newExpense.getUserID());
 
         long insert = db.insert(expenseDB, null, cv);
 
@@ -73,10 +76,10 @@ public class Expense_record_dao extends SQLiteOpenHelper {
         List<expense_record> list = new ArrayList<expense_record>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate}, null, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            expense_record q = new expense_record(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            expense_record q = new expense_record(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
             list.add(q);
         }
 
@@ -89,10 +92,10 @@ public class Expense_record_dao extends SQLiteOpenHelper {
         List<expense_record> list = new ArrayList<expense_record>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate}, " " + expenseCate + "=" + cate, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, " " + expenseCate + "=" + cate, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            expense_record q = new expense_record(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            expense_record q = new expense_record(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
             list.add(q);
         }
         result.close();
@@ -103,7 +106,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
     public double totalExpense(){
         SQLiteDatabase db = this.getReadableDatabase();
         double total = 0;
-        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate}, null, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += result.getDouble(2);

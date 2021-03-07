@@ -27,6 +27,8 @@ public class IncomeInputFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private int userID;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -37,6 +39,11 @@ public class IncomeInputFragment extends Fragment {
     public IncomeInputFragment() {
         // Required empty public constructor
     }
+
+    public IncomeInputFragment(int userID) {
+        this.userID = userID;
+    }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -68,6 +75,8 @@ public class IncomeInputFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        userID = getActivity().getIntent().getIntExtra("userID", -1);
 
         View view = inflater.inflate(R.layout.fragment_income_input, container, false);
         Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_Income);
@@ -105,22 +114,20 @@ public class IncomeInputFragment extends Fragment {
                 incomeDAO dao = new incomeDAO(getContext());
                 boolean yay = true;
 
-                if (desc.getText().toString().matches("")){
+                if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){
                     yay = false;
+                    Toast.makeText(getContext(),"Enter Every Information!",Toast.LENGTH_LONG).show();
                 }
-
-                if (yay) {
-                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString());
+                else
+                {
+                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString(), userID);
                     yay = dao.addOne(rec);
-                }
+                    if(yay){
+                        Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
+                        getActivity().finish();
+                    }
 
-                if (yay){
-                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
-                    getActivity().finish();
-                } else if (!yay){
-                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 

@@ -20,6 +20,7 @@ public class incomeDAO extends SQLiteOpenHelper {
     private static final String incomeAmt = "incomeAmt";
     private static final String incomeCate = "incomeCate";
     private static final String incomeDate = "incomeDate";
+    private static final String userID = "userID";
 
     public incomeDAO(@Nullable Context context) {
         super(context, "moneydiary.db", null, 1);
@@ -27,7 +28,7 @@ public class incomeDAO extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + incomeDB +"("+ incomeID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ incomeDesc + " TEXT, " + incomeAmt +" REAL, " + incomeCate + " TEXT, " + incomeDate + " INTEGER" + ")";
+        String createTableStatement = "CREATE TABLE " + incomeDB +"("+ incomeID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ incomeDesc + " TEXT, " + incomeAmt +" REAL, " + incomeCate + " TEXT, " + incomeDate + " INTEGER, " + userID +  " INTEGER)";
 
         db.execSQL(createTableStatement);
     }
@@ -45,6 +46,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         cv.put(incomeAmt, newincome.getincomeAmt());
         cv.put(incomeCate, newincome.getincomeCate());
         cv.put(incomeDate, newincome.getincomeDate());
+        cv.put(userID, newincome.getUserID());
 
         long insert = db.insert(incomeDB, null, cv);
 
@@ -69,10 +71,10 @@ public class incomeDAO extends SQLiteOpenHelper {
         List<income> list = new ArrayList<income>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
             list.add(q);
         }
 
@@ -85,10 +87,10 @@ public class incomeDAO extends SQLiteOpenHelper {
         List<income> list = new ArrayList<income>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, " " + incomeCate + "=" + cate, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, " " + incomeCate + "=" + cate, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
             list.add(q);
         }
         result.close();
@@ -99,7 +101,7 @@ public class incomeDAO extends SQLiteOpenHelper {
     public double totalIncome(){
         SQLiteDatabase db = this.getReadableDatabase();
         double total = 0;
-        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += result.getDouble(2);

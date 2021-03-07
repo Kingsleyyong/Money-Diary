@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class addRecord extends AppCompatActivity implements View.OnClickListener {
 
     Button incomeBtn, expenseBtn;
+    int userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
 
         incomeBtn.setOnClickListener(this);
         expenseBtn.setOnClickListener(this);
+
+        userID = getIntent().getIntExtra("userID", -1);
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayout, new ExpenseInputFragment());
@@ -44,7 +47,7 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
                 incomeBtn.setBackgroundColor(Color.parseColor("#7cad3e"));
                 expenseBtn.setBackgroundColor(Color.parseColor("#899974"));
 
-                ft.replace(R.id.frameLayout, new IncomeInputFragment());
+                ft.replace(R.id.frameLayout, new IncomeInputFragment(userID));
                 ft.commit();
                 break;
 
@@ -53,7 +56,7 @@ public class addRecord extends AppCompatActivity implements View.OnClickListener
                 expenseBtn.setBackgroundColor(Color.parseColor("#7cad3e"));
                 incomeBtn.setBackgroundColor(Color.parseColor("#899974"));
 
-                ft.replace(R.id.frameLayout, new ExpenseInputFragment());
+                ft.replace(R.id.frameLayout, new ExpenseInputFragment(userID));
                 ft.commit();
                 break;
         }

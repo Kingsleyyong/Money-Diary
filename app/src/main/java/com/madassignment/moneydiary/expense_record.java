@@ -6,21 +6,24 @@ public class expense_record {
     private String expense_decs;
     private double expense_price;
     private String expense_date;
+    private int userID;
 
-    public expense_record(String expense_decs, double expense_price, String expense_cate, String expense_date) {
+    public expense_record(String expense_decs, double expense_price, String expense_cate, String expense_date, int userID) {
         this.expense_decs = expense_decs;
         this.expense_price = expense_price;
         this.expense_cate = expense_cate;
         this.expense_date = expense_date;
+        this.userID = userID;
     }
 
     public expense_record(int expense_id, String expense_decs, double expense_price,
-                          String expense_cate, String expense_date) {
+                          String expense_cate, String expense_date, int userID) {
         this.expense_id = expense_id;
         this.expense_decs = expense_decs;
         this.expense_price = expense_price;
         this.expense_cate = expense_cate;
         this.expense_date = expense_date;
+        this.userID = userID;
     }
 
     public int getExpense_id() {
@@ -38,21 +41,8 @@ public class expense_record {
     public String getDate() {
         return this.expense_date;
     }
-    public void setExpense_date(String expense_date) {
-        this.expense_date = expense_date;
-    }
-    public void setExpense_id(int expense_id) {
-        this.expense_id = expense_id;
-    }
-    public void setDesc(String expense_decs) {
-        this.expense_decs = expense_decs;
-    }
-    public void setCate(String expense_cate) {
-        this.expense_cate = expense_cate;
-    }
-    public void setPrice(float expense_price) {
-        this.expense_price = expense_price;
-    }
+    public int getUserID() {return  this.userID; }
+
 }
 
 

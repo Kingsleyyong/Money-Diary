@@ -2,9 +2,6 @@ package com.madassignment.moneydiary;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
 
@@ -28,6 +27,8 @@ public class ExpenseInputFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private int userID;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -38,6 +39,10 @@ public class ExpenseInputFragment extends Fragment {
     public ExpenseInputFragment() {
         // Required empty public constructor
     }
+    public ExpenseInputFragment(int userID) {
+        this.userID = userID;
+    }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -68,6 +73,7 @@ public class ExpenseInputFragment extends Fragment {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
+
         date = (Button) view.findViewById(R.id.datePicker_Expense);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,19 +103,19 @@ public class ExpenseInputFragment extends Fragment {
                 Expense_record_dao dao = new Expense_record_dao(getContext());
                 boolean yay = true;
 
-                if (desc.getText().toString().matches("")){
+                if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){
                     yay = false;
+                    Toast.makeText(getContext(),"Enter Every Information!",Toast.LENGTH_LONG).show();
                 }
-
-                if (yay) {
-                    expense_record rec = new expense_record(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString());
+                else
+                {
+                    expense_record rec = new expense_record(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString(), userID);
                     yay = dao.addOne(rec);
-                }
+                    if(yay){
+                        Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
+                        getActivity().finish();
+                    }
 
-                if (yay){
-                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
-                } else if (!yay){
-                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
                 }
 
             }
