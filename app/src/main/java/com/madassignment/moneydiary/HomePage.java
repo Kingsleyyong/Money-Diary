@@ -1,12 +1,13 @@
 package com.madassignment.moneydiary;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -21,6 +22,7 @@ public class HomePage extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     ImageView aboutus, feedback;
+    TextView usrname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,16 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(getTitle());
+
+        usrname = findViewById(R.id.textUsername);
+        String name = getIntent().getStringExtra("name");
+        usrname.setText(name);
+
+        // Income setup
+        incomeDAO incomedao = new incomeDAO(this);
+
+        TextView totalincome = findViewById(R.id.incomeNumber);
+        totalincome.setText((Double.toString(incomedao.totalIncome())));
 
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +70,26 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
+                        builder.setTitle("Confirmation PopUp").
+                                setMessage("You sure that you want to logout?");
+                        builder.setPositiveButton("Yes",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        Intent i = new Intent(getApplicationContext(),
+                                                SignInPage.class);
+                                        startActivity(i);
+                                    }
+                                });
+                        builder.setNegativeButton("No",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     }
                 });
 

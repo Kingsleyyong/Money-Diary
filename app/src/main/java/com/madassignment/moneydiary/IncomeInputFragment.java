@@ -10,12 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,6 +98,35 @@ public class IncomeInputFragment extends Fragment {
 
                 }, mYear, mMonth, mDay);
                 datePickerDialog.show();
+            }
+        });
+
+        Button submit = view.findViewById(R.id.SubmitRecord_Income);
+        DatePicker date = view.findViewById(R.id.datePicker_Income);
+        EditText money = view.findViewById(R.id.moneyInput_Income);
+        EditText desc = view.findViewById(R.id.description_Income);
+        long datep = date.getCalendarView().getDate();
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                incomeDAO dao = new incomeDAO(getContext());
+                boolean yay = true;
+
+                if (desc.getText().toString().matches("")){
+                    yay = false;
+                }
+
+                if (yay) {
+                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(),datep);
+                    yay = dao.addOne(rec);
+                }
+
+                if (yay){
+                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
+                } else if (!yay){
+                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 

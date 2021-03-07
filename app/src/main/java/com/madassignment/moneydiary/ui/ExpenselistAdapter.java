@@ -10,13 +10,13 @@ import com.madassignment.moneydiary.expense_record;
 import java.util.List;
 
 public class ExpenselistAdapter extends RecyclerView.Adapter<ExpenselistAdapter.ViewHolder>{
-        private final int expenseLayout;
-        private List<expense_record> expenseList;
-        public ExpenselistAdapter(int layoutId){
+    private final int expenseLayout;
+    private List<expense_record> expenseList;
+    public ExpenselistAdapter(int layoutId){
             expenseLayout = layoutId;
         }
 
-        public void setRecordList(List<expense_record> records) {
+    public void setRecordList(List<expense_record> records) {
             expenseList = records;
             notifyDataSetChanged();
         }

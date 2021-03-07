@@ -37,30 +37,32 @@ public class incomeDAO extends SQLiteOpenHelper {
 
     }
 
-    public void addOne(income newincome) {
+    public boolean addOne(income newincome) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put(incomeDesc, newincome.getincomeDesc());
         cv.put(incomeAmt, newincome.getincomeAmt());
         cv.put(incomeCate, newincome.getincomeCate());
-        cv.put(incomeDate, newincome.getincomePic());
+        cv.put(incomeDate, newincome.getincomeDate());
 
         long insert = db.insert(incomeDB, null, cv);
 
         if (insert == -1) {
-            //fail
+            return false;
         }
+        return true;
     }
 
-    public void deleteOne(income oldincome) {
+    public boolean deleteOne(income oldincome) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         int delete = db.delete(incomeDB, ("ID=" + oldincome.getincomeID()), null);
 
         if (delete == 0) {
-            //fail
+            return false;
         }
+        return true;
     }
 
     public List<income> getAll() {
@@ -70,9 +72,11 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
             list.add(q);
         }
+
+        result.close();
 
         return list;
     }
@@ -84,10 +88,22 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, " " + incomeCate + "=" + cate, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
             list.add(q);
         }
+        result.close();
 
         return list;
+    }
+
+    public double totalIncome(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        double total = 0;
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
+
+        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
+            total += result.getDouble(2);
+        }
+        return total;
     }
 }
