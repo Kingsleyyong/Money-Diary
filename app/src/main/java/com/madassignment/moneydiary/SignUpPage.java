@@ -129,7 +129,4 @@ public class SignUpPage extends AppCompatActivity {
         Toast.makeText(SignUpPage.this, "Successfully Registered!", Toast.LENGTH_SHORT).show();
         finish();
     }
-
-
-
 }

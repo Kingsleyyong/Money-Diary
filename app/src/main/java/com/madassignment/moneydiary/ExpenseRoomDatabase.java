@@ -6,7 +6,9 @@ import androidx.room.RoomDatabase;
 @Database(entities = {expense_record.class}, version = 1)
 
 public abstract class ExpenseRoomDatabase  extends RoomDatabase{
+    private static final String dbname= "Expense_database";
     public abstract Expense_record_dao expenseRecordDao();
+
     private static ExpenseRoomDatabase INSTANCE;
     static ExpenseRoomDatabase getDatabase(final Context context)
     {
@@ -16,7 +18,7 @@ public abstract class ExpenseRoomDatabase  extends RoomDatabase{
                     INSTANCE =
                             Room.databaseBuilder(context.getApplicationContext(),
                                     ExpenseRoomDatabase.class,
-                                    "Expense_database").build();
+                                    "Expense_database").allowMainThreadQueries().build();
                 }
             }
         }
