@@ -1,5 +1,6 @@
 package com.madassignment.moneydiary;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +32,9 @@ public class IncomeInputFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    EditText date;
+    DatePickerDialog datePickerDialog;
 
     public IncomeInputFragment() {
         // Required empty public constructor
@@ -71,6 +77,25 @@ public class IncomeInputFragment extends Fragment {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.incomeCategory));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
+
+        date = (EditText) view.findViewById(R.id.datePicker_Income);
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // calender class's instance and get current date , month and year from calender
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR); // current year
+                int mMonth = c.get(Calendar.MONTH); // current month
+                int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
+                // date picker dialog
+                datePickerDialog = new DatePickerDialog(getActivity(), (view1, year, monthOfYear, dayOfMonth) -> {
+                    // set day of month , month and year value in the edit text
+                    date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+
+                }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
 
         // Inflate the layout for this fragment
         return view;
