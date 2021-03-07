@@ -26,6 +26,7 @@ public class HomePage extends AppCompatActivity {
     private AlertDialog dialog;
     ImageView aboutus, feedback;
     TextView usrname;
+    int userID;
 
     RecyclerView expenseRecycler;
     ExpenseRecAdapter expenseRecAdapter;
@@ -44,6 +45,10 @@ public class HomePage extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         usrname.setText(name);
 
+        String uid = getIntent().getStringExtra("uid");
+        userID = Integer.parseInt(uid);
+
+        Toast.makeText(this,uid, Toast.LENGTH_SHORT).show();
 
         // Expense setup
         Expense_record_dao expensedao = new Expense_record_dao(this);

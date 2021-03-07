@@ -15,6 +15,7 @@ public class SignInPage extends AppCompatActivity {
     Button signInButton;
 
     String LoggedInName = "";
+    String userID;
 
     ProfileActivity profile = new ProfileActivity();
 
@@ -56,9 +57,12 @@ public class SignInPage extends AppCompatActivity {
                                 });
                             }
                             else{
-//                                String name = user.username;
                                 LoggedInName = user.username;
-                                startActivity(new Intent(SignInPage.this, HomePage.class).putExtra("name",LoggedInName));
+                                userID = String.valueOf(user.getUID());
+                                Intent i = new Intent(SignInPage.this, HomePage.class);
+                                i.putExtra("name",LoggedInName);
+                                i.putExtra("uid", userID);
+                                startActivity(i);
                             }
                         }
                     }).start();
