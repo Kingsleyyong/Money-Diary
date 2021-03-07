@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +43,12 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
         holder.desc.setText(incomeList.get(position).getincomeDesc());
         holder.cate.setText(incomeList.get(position).getincomeCate());
         holder.amt.setText(Double.toString(incomeList.get(position).getincomeAmt()));
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dao.deleteOne(position+1);
+            }
+        });
+
     }
 
     @Override
@@ -52,6 +60,7 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView date, desc, cate, amt;
+        Button delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +69,7 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
             desc = itemView.findViewById(R.id.editTextDescRecord);
             cate = itemView.findViewById(R.id.editTextCategoryRecord);
             amt = itemView.findViewById(R.id.editTextAmountRecord);
+            delete = itemView.findViewById(R.id.deleteBtn);
 
         }
     }
