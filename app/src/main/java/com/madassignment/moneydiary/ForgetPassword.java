@@ -28,6 +28,7 @@ public class ForgetPassword extends AppCompatActivity {
 //        params.y = 0;
 //        getWindow().setAttributes(params);
 
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         Button resetPwBtn = findViewById(R.id.resetPassBtn);
         resetPwBtn.setOnClickListener(
@@ -42,33 +43,40 @@ public class ForgetPassword extends AppCompatActivity {
                         if(rsEmail.equals("") || rsEmail == null) {
                             Toast.makeText(ForgetPassword.this, "Please insert an email", Toast.LENGTH_SHORT).show();
                         }
-                        else if(user == null){
-                            Toast.makeText(getApplicationContext(), "User does not exist", Toast.LENGTH_SHORT).show();
-                        }
                         else {
-                            resetPwBtn.setEnabled(false);
 
-                            userDao.resetPassword(rsEmail);
+                            if (rsEmail.trim().matches(emailPattern)) {
 
-                            Intent intent = new Intent(Intent.ACTION_SEND);
-                            intent.setType("text/plain");
-                            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "moneydiary_official@gmail.com" } );
-                            intent.putExtra(Intent.EXTRA_SUBJECT, "Money Diary App Reset Password");
-                            intent.putExtra(Intent.EXTRA_TEXT, "Your password had been reset to ABC123. Please reset your password after logging in. \n" +
-                                    "\n Please send us an email if you have any problems.");
+                                if(user == null){
+                                    Toast.makeText(getApplicationContext(), "User does not exist", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
 
-                            try {
-                                startActivity(Intent.createChooser(intent, "Send mail..."));
-                            } catch (android.content.ActivityNotFoundException ex) {
-                                Toast.makeText(ForgetPassword.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                                    resetPwBtn.setEnabled(false);
+
+                                    userDao.resetPassword(rsEmail);
+
+                                    Intent intent = new Intent(Intent.ACTION_SEND);
+                                    intent.setType("text/plain");
+                                    intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "moneydiary_official@gmail.com" } );
+                                    intent.putExtra(Intent.EXTRA_SUBJECT, "Money Diary App Reset Password");
+                                    intent.putExtra(Intent.EXTRA_TEXT, "Your password had been reset to ABC123. Please reset your password after logging in. \n" +
+                                            "\n Please send us an email if you have any problems.");
+
+                                    try {
+                                        startActivity(Intent.createChooser(intent, "Send mail..."));
+                                    } catch (android.content.ActivityNotFoundException ex) {
+                                        Toast.makeText(ForgetPassword.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
                             }
                         }
-
-
                     }
                 }
         );
-
     }
-
 }

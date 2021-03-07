@@ -33,23 +33,39 @@ public class SignUpPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_page);
 
-
         userAdapter = new UserAdapter();
         btnNewUsr = findViewById(R.id.signUpButton);
 
 
+        EditText uName = findViewById(R.id.usernameSignUpPage);
+        EditText uEmail = findViewById(R.id.emailSignUpPage);
+        EditText uPass = findViewById(R.id.passwordSignUpPage);
+        EditText uCfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
 
-        EditText name = findViewById(R.id.usernameSignUpPage);
-        EditText email = findViewById(R.id.emailSignUpPage);
-        EditText pass = findViewById(R.id.passwordSignUpPage);
-        EditText cfmPass = findViewById(R.id.reconfirmPasswordSignUpPage);
-
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         Button saveButton = findViewById(R.id.signUpButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               saveNewUser(name.getText().toString(),email.getText().toString(),pass.getText().toString(),cfmPass.getText().toString());
+
+                String name = uName.getText().toString();
+                String email = uEmail.getText().toString();
+                String pass = uPass.getText().toString();
+                String cfmPass = uCfmPass.getText().toString();
+
+                if( name.length()!=0 && email.length()!=0 && pass.length()!=0 && cfmPass.length()!=0 ) {
+
+                    if (email.trim().matches(emailPattern)) {
+                        saveNewUser(name, email, pass, cfmPass);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    Toast.makeText(SignUpPage.this, "Please fill in all details", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -129,7 +145,5 @@ public class SignUpPage extends AppCompatActivity {
         Toast.makeText(SignUpPage.this, "Successfully Registered!", Toast.LENGTH_SHORT).show();
         finish();
     }
-
-
-
+    
 }

@@ -21,7 +21,6 @@ public class SignInPage extends AppCompatActivity {
         Button forgotPassButton = findViewById(R.id.forgotPassButton);
         Button signUpButton = findViewById(R.id.signUpButton);
 
-
         namee = findViewById(R.id.editTextTextUsername);
         pass = findViewById(R.id.editTextTextPassword);
         signInButton = findViewById(R.id.signInButton);
