@@ -88,14 +88,21 @@ public class IncomeInputFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 incomeDAO dao = new incomeDAO(getContext());
-                income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(),datep);
+                boolean yay = true;
 
-                boolean yay = dao.addOne(rec);
+                if (desc.getText().toString().matches("")){
+                    yay = false;
+                }
+
+                if (yay) {
+                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(),datep);
+                    yay = dao.addOne(rec);
+                }
 
                 if (yay){
-                    Toast.makeText(getContext(),"SUCCESS",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Success!",Toast.LENGTH_SHORT).show();
                 } else if (!yay){
-                    Toast.makeText(getContext(),"FAILURE",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Failed, have you entered a description?",Toast.LENGTH_LONG).show();
                 }
 
             }
