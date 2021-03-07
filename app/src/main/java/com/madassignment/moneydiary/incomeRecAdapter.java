@@ -37,8 +37,7 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
         incomeDAO dao = new incomeDAO(ctx);
         incomeList = dao.getAll();
 
-        Date rowDate = new Date(incomeList.get(position).getincomeDate());
-        holder.date.setText(rowDate.toString());
+        holder.date.setText(incomeList.get(position).getincomeDate());
         holder.desc.setText(incomeList.get(position).getincomeDesc());
         holder.cate.setText(incomeList.get(position).getincomeCate());
         holder.amt.setText(Double.toString(incomeList.get(position).getincomeAmt()));

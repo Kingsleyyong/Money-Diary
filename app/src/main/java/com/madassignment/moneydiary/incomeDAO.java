@@ -72,7 +72,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
             list.add(q);
         }
 
@@ -88,7 +88,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, " " + incomeCate + "=" + cate, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
-            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getLong(4));
+            income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4));
             list.add(q);
         }
         result.close();

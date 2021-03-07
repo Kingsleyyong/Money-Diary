@@ -102,10 +102,9 @@ public class IncomeInputFragment extends Fragment {
         });
 
         Button submit = view.findViewById(R.id.SubmitRecord_Income);
-        DatePicker date = view.findViewById(R.id.datePicker_Income);
+        EditText date = view.findViewById(R.id.datePicker_Income);
         EditText money = view.findViewById(R.id.moneyInput_Income);
         EditText desc = view.findViewById(R.id.description_Income);
-        long datep = date.getCalendarView().getDate();
 
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -117,7 +116,7 @@ public class IncomeInputFragment extends Fragment {
                 }
 
                 if (yay) {
-                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(),datep);
+                    income rec = new income(desc.getText().toString(), Double.valueOf(money.getText().toString()), mySpinner.getSelectedItem().toString(), date.getText().toString());
                     yay = dao.addOne(rec);
                 }
 
