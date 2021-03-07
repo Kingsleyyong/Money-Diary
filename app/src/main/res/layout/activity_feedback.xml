@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Feedback">
+    tools:context=".Feedback"
+    android:background="@drawable/gradient_feedback_bg">
 
     <TextView
         android:id="@+id/contactUsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/chabi_shape"
         android:fontFamily="@font/unlock"
+        android:gravity="center"
         android:text="@string/feedback"
-        android:textSize="58sp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/feedbackLabel"
         app:layout_constraintStart_toStartOf="@+id/feedbackLabel"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,9 +27,10 @@
         android:layout_width="292dp"
         android:layout_height="95dp"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/adamina"
+        android:fontFamily="@font/roboto"
         android:text="@string/feel_free_to_drop_us_your_feedback"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="29sp"
         app:layout_constraintEnd_toEndOf="@+id/frameLayout3"
         app:layout_constraintStart_toStartOf="@+id/frameLayout3"
@@ -46,8 +51,6 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
-
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
