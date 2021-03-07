@@ -30,7 +30,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_card_expense">
 
                 <TextView
                     android:id="@+id/textViewExpenseTotal"
@@ -41,6 +42,7 @@
                     android:text="@string/total_expense"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/textViewRM2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +55,7 @@
                     android:fontFamily="@font/adamina"
                     android:text="@string/rm"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/espenseNumber"
                     app:layout_constraintStart_toEndOf="@+id/textViewExpenseTotal"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -66,6 +69,7 @@
                     android:fontFamily="@font/adamina"
                     android:text="@string/_0_00"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textViewRM2"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +103,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_card_income">
 
                 <TextView
                     android:id="@+id/textViewIncomeTotal"
@@ -110,6 +115,7 @@
                     android:text="@string/total_income"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/textViewRM"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +129,7 @@
                     android:fontFamily="@font/adamina"
                     android:text="@string/rm"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/incomeNumber"
                     app:layout_constraintStart_toEndOf="@+id/textViewIncomeTotal"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -136,6 +143,7 @@
                     android:fontFamily="@font/adamina"
                     android:text="@string/_0_00"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textViewRM"
                     app:layout_constraintTop_toTopOf="parent" />
