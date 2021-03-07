@@ -15,9 +15,9 @@
             android:layout_width="40dp"
             android:layout_height="37dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/emailSignUpPage5"
-            app:layout_constraintEnd_toStartOf="@+id/emailSignUpPage5"
-            app:layout_constraintTop_toTopOf="@+id/emailSignUpPage5"
+            app:layout_constraintBottom_toBottomOf="@+id/viewProfileEmail"
+            app:layout_constraintEnd_toStartOf="@+id/viewProfileEmail"
+            app:layout_constraintTop_toTopOf="@+id/viewProfileEmail"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/mail_logo" />
 
@@ -26,13 +26,13 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/usernameSignUpPage5"
-            app:layout_constraintEnd_toStartOf="@+id/usernameSignUpPage5"
-            app:layout_constraintTop_toTopOf="@+id/usernameSignUpPage5"
+            app:layout_constraintBottom_toBottomOf="@+id/viewProfileName"
+            app:layout_constraintEnd_toStartOf="@+id/viewProfileName"
+            app:layout_constraintTop_toTopOf="@+id/viewProfileName"
             app:srcCompat="@drawable/person_logo" />
 
         <TextView
-            android:id="@+id/usernameSignUpPage5"
+            android:id="@+id/viewProfileName"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="108dp"
@@ -51,13 +51,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/emailSignUpPage5"
+            android:id="@+id/viewProfileEmail"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="250dp"
             android:autofillHints=""
             android:backgroundTint="@color/sysLightBlue"
-            android:editable="false"
             android:ems="10"
             android:fontFamily="@font/roboto"
             android:gravity="center"

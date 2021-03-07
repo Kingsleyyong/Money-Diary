@@ -9,10 +9,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class SignInPage extends AppCompatActivity {
+
     EditText namee, pass;
     Button signInButton;
+
+    String LoggedInName = "";
+
+    ProfileActivity profile = new ProfileActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +51,20 @@ public class SignInPage extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(getApplicationContext(), "Invalid UserName or Password", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }
                             else{
-                                String name = user.username;
-                                startActivity(new Intent(SignInPage.this, HomePage.class).putExtra("name",name));
+//                                String name = user.username;
+                                LoggedInName = user.username;
+                                startActivity(new Intent(SignInPage.this, HomePage.class).putExtra("name",LoggedInName));
                             }
                         }
                     }).start();
                 }
             }
         });
-
 
         forgotPassButton.setOnClickListener(v -> {
             //getApplicationContext() return the whole Application

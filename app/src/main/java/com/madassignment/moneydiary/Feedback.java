@@ -40,16 +40,16 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
         String fbTxt = "Feel free to drop us your feedback.";
         SpannableString spanFb = new SpannableString(fbTxt);
 
-        Bundle mapViewBundle = null;
-
-        if(savedInstanceState != null) {
-            mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
-        }
-
-        mMapView = (MapView) findViewById(R.id.map);
-        mMapView.onCreate(mapViewBundle);
-
-        mMapView.getMapAsync(this);
+//        Bundle mapViewBundle = null;
+//
+//        if(savedInstanceState != null) {
+//            mapViewBundle = savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY);
+//        }
+//
+//        mMapView = (MapView) findViewById(R.id.map);
+//        mMapView.onCreate(mapViewBundle);
+//
+//        mMapView.getMapAsync(this);
 
         SupportMapFragment mapFragment = SupportMapFragment.newInstance();
         getSupportFragmentManager()
