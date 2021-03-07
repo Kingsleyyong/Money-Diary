@@ -32,7 +32,7 @@ public class ExpenseInputFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    EditText date;
+    Button date;
     DatePickerDialog datePickerDialog;
 
     public ExpenseInputFragment() {
@@ -62,13 +62,13 @@ public class ExpenseInputFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_expense_input, container, false);
-        Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_expense);
+        Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_Expense);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.expenseCategory));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-        date = (EditText) view.findViewById(R.id.datePicker_Expense);
+        date = view.findViewById(R.id.datePicker_Expense);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +88,7 @@ public class ExpenseInputFragment extends Fragment {
         });
 
         Button submit = view.findViewById(R.id.SubmitRecord_Expense);
-        EditText date = view.findViewById(R.id.datePicker_Expense);
+        Button date = view.findViewById(R.id.datePicker_Expense);
         EditText money = view.findViewById(R.id.moneyInput_Expense);
         EditText desc = view.findViewById(R.id.description_Expense);
 

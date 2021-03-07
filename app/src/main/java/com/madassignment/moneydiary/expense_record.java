@@ -1,11 +1,11 @@
 package com.madassignment.moneydiary;
 
 public class expense_record {
-    public int expense_id;
-    public String expense_cate;
-    public String expense_decs;
-    public double expense_price;
-    public String expense_date;
+    private int expense_id;
+    private String expense_cate;
+    private String expense_decs;
+    private double expense_price;
+    private String expense_date;
 
     public expense_record(String expense_decs, double expense_price, String expense_cate, String expense_date) {
         this.expense_decs = expense_decs;
