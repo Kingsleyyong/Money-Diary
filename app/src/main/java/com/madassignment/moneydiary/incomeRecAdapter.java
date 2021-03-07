@@ -6,12 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Date;
 import java.util.List;
 
 public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.ViewHolder> {
@@ -46,6 +44,7 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
         holder.delete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dao.deleteOne(incomeList.get(position).getincomeID());
+                notifyDataSetChanged();
             }
         });
 
