@@ -28,6 +28,7 @@
         android:hint="@string/dd_mm_yy"
         android:inputType="date"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/editTextCategoryRecord"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +42,7 @@
         android:hint="@string/category_name"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/editTextAmountRecord"
         app:layout_constraintStart_toEndOf="@+id/editTextDateRecord"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +56,7 @@
         android:hint="@string/_0_00"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextCategoryRecord"
         app:layout_constraintTop_toTopOf="parent" />
