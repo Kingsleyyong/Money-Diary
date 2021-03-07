@@ -95,4 +95,15 @@ public class incomeDAO extends SQLiteOpenHelper {
 
         return list;
     }
+
+    public double totalIncome(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        double total = 0;
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate}, null, null, null, null, null, null);
+
+        for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
+            total += result.getDouble(2);
+        }
+        return total;
+    }
 }

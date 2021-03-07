@@ -35,6 +35,11 @@ public class HomePage extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         usrname.setText(name);
 
+        // Income setup
+        incomeDAO incomedao = new incomeDAO(this);
+
+        TextView totalincome = findViewById(R.id.incomeNumber);
+        totalincome.setText((Double.toString(incomedao.totalIncome())));
 
         FloatingActionButton menu = findViewById(R.id.fab);
         menu.setOnClickListener(new View.OnClickListener() {
