@@ -58,10 +58,10 @@ public class Expense_record_dao extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean deleteOne(expense_record old_expense) {
+    public boolean deleteOne(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-
-        int delete = db.delete(expenseDB, ("ID=" + old_expense.getExpense_id()), null);
+        
+        int delete = db.delete(expenseDB, " ExpenseID =" + id, null);
 
         if (delete == 0) {
             return false;

@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ExpenseInputFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class ExpenseInputFragment extends Fragment {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -68,7 +68,7 @@ public class ExpenseInputFragment extends Fragment {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-        date = view.findViewById(R.id.datePicker_Expense);
+        date = (Button) view.findViewById(R.id.datePicker_Expense);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

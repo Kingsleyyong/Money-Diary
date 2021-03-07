@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,11 +13,15 @@ import androidx.fragment.app.FragmentTransaction;
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button edtBtn,subBtn;
+    String LoggedName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
+
+        LoggedName = getIntent().getStringExtra("name");
+//        Toast.makeText(this, LoggedName, Toast.LENGTH_SHORT).show();
 
         edtBtn = findViewById(R.id.editProfileBtn);
         subBtn = findViewById(R.id.submitBtn);
@@ -46,6 +51,4 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             ft.commit();
         }
     }
-
-
 }

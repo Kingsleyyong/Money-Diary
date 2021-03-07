@@ -27,6 +27,9 @@ public class HomePage extends AppCompatActivity {
     ImageView aboutus, feedback;
     TextView usrname;
 
+    RecyclerView expenseRecycler;
+    ExpenseRecAdapter expenseRecAdapter;
+
     RecyclerView incomeRecycler;
     incomeRecAdapter incomeRecAdapter;
 
@@ -40,6 +43,21 @@ public class HomePage extends AppCompatActivity {
         usrname = findViewById(R.id.textUsername);
         String name = getIntent().getStringExtra("name");
         usrname.setText(name);
+
+
+        // Expense setup
+        Expense_record_dao expensedao = new Expense_record_dao(this);
+
+        TextView totalexpense = findViewById(R.id.expenseNumber);
+
+        totalexpense.setText(String.format("%.2f", expensedao.totalExpense()));
+
+        expenseRecycler = findViewById(R.id.expenseRec);
+        expenseRecAdapter = new ExpenseRecAdapter();
+        expenseRecAdapter.setCtx(this);
+
+        expenseRecycler.setAdapter(expenseRecAdapter);
+
 
         // Income setup
         incomeDAO incomedao = new incomeDAO(this);
@@ -66,7 +84,8 @@ public class HomePage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
-                        Intent profile = new Intent(getApplicationContext(), ProfileActivity.class);
+
+                        Intent profile = new Intent(getApplicationContext(), ProfileActivity.class).putExtra("name",name);
                         startActivity(profile);
                     }
                 });
