@@ -85,13 +85,13 @@ public class HomePage extends AppCompatActivity {
                         Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
-                        builder.setTitle("Confirmation PopUp").
-                                setMessage("You sure that you want to logout?");
+                        builder.setTitle("Confirmation: ").
+                                setMessage("Are you sure to proceed log out?");
                         builder.setPositiveButton("Yes",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent i = new Intent(getApplicationContext(),
-                                                SignInPage.class);
+                                                LoadingScreen.class);
                                         startActivity(i);
                                     }
                                 });
