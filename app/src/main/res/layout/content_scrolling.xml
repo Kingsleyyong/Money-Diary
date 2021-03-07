@@ -155,6 +155,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/expense_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
