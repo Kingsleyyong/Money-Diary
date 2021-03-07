@@ -67,31 +67,21 @@ public class NonEditableUserData extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_non_editable_user_data, container, false);
 
-        userID = getActivity().getIntent().getStringExtra("userID");
+        userID = getArguments().getString("userID");
+        uid = Integer.parseInt(userID);
+
+        UserRoomDatabase db = UserRoomDatabase.getDatabase(getContext());
+        final UserDao userDao = db.userDao();
+        User user = userDao.UserById(uid);
+
+        String displayName =  user.username;
+        String displayEmail = user.email;
 
         TextView name = view.findViewById(R.id.viewProfileName);
         TextView email = view.findViewById(R.id.viewProfileEmail);
 
-//        uid = Integer.parseInt(userID);
-
-        Toast.makeText(getContext(), userID, Toast.LENGTH_SHORT).show();
-//
-//
-//        UserRoomDatabase db = UserRoomDatabase.getDatabase(getContext());
-//        final UserDao userDao = db.userDao();
-//
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                User user = userDao.UserById(uid);
-//
-//                String dbName = user.username;
-//                String dbEmail = user.email;
-//
-//                name.setText(dbName);
-//                email.setText(dbEmail);
-//            }
-//        }).start();
+        name.setText(displayName);
+        email.setText(displayEmail);
 
         // Inflate the layout for this fragment
         return view;

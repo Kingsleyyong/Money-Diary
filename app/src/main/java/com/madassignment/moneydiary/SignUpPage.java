@@ -36,7 +36,6 @@ public class SignUpPage extends AppCompatActivity {
         userAdapter = new UserAdapter();
         btnNewUsr = findViewById(R.id.signUpButton);
 
-
         EditText uName = findViewById(R.id.usernameSignUpPage);
         EditText uEmail = findViewById(R.id.emailSignUpPage);
         EditText uPass = findViewById(R.id.passwordSignUpPage);
@@ -54,10 +53,28 @@ public class SignUpPage extends AppCompatActivity {
                 String pass = uPass.getText().toString();
                 String cfmPass = uCfmPass.getText().toString();
 
+                UserRoomDatabase db = UserRoomDatabase.getDatabase(getApplicationContext());
+                final UserDao userDao = db.userDao();
+                User existingName = userDao.FindUsername(name);
+                User existingEmail = userDao.CheckUser(email);
+
                 if( name.length()!=0 && email.length()!=0 && pass.length()!=0 && cfmPass.length()!=0 ) {
 
                     if (email.trim().matches(emailPattern)) {
-                        saveNewUser(name, email, pass, cfmPass);
+
+                        if(existingName != null) {
+                            Toast.makeText(getApplicationContext(),"Username have been taken", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(existingEmail != null) {
+                            Toast.makeText(getApplicationContext(),"Email address have been taken", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(!pass.equals(cfmPass)){
+                            Toast.makeText(getApplicationContext(),"Passwords must be same!", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            saveNewUser(name, email, pass, cfmPass);
+                        }
+
                     }
                     else {
                         Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();

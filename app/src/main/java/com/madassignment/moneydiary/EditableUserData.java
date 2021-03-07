@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,9 @@ public class EditableUserData extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    public static String userID;
+    int uid;
 
     public EditableUserData() {
         // Required empty public constructor
@@ -58,7 +62,32 @@ public class EditableUserData extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_editable_user_data, container, false);
+
+        userID = getArguments().getString("userID");
+        uid = Integer.parseInt(userID);
+
+        UserRoomDatabase db = UserRoomDatabase.getDatabase(getContext());
+        final UserDao userDao = db.userDao();
+        User user = userDao.UserById(uid);
+
+        String disName = user.username;
+        String disEmail = user.email;
+        String disPass = user.password;
+        String disConfirmPass = user.confirmPassword;
+
+        EditText name = view.findViewById(R.id.editProfileName);
+        EditText email = view.findViewById(R.id.editProfileEmail);
+        EditText pass = view.findViewById(R.id.editProfilePass);
+        EditText conPass = view.findViewById(R.id.editProfileReconfirm);
+
+        name.setText(disName);
+        email.setText(disEmail);
+        pass.setText(disPass);
+        conPass.setText(disConfirmPass);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editable_user_data, container, false);
+        return view;
     }
 }

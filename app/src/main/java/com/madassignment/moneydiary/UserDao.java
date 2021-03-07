@@ -18,11 +18,17 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userEmail = (:email) ")
     User CheckUser(String email);
 
+    @Query("SELECT * FROM user WHERE userName = (:username)")
+    User FindUsername(String username);
+
     @Query("SELECT * FROM user WHERE userID = (:uid) ")
     User UserById(int uid);
 
     @Query("UPDATE user SET userPW = 'ABC123' WHERE userEmail= (:usrEmail)")
     void resetPassword(String usrEmail);
+
+    @Query("UPDATE user SET userName=:uname , userEmail=:uemail, userPW=:upass , userCfPw=:uconpass WHERE userID=:uid")
+    void editProfile(String uname, String uemail, String upass, String uconpass, int uid);
 
     @Query("SELECT * FROM user WHERE userEmail = :email ")
     List<User>findUser(String email);

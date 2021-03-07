@@ -202,7 +202,6 @@ public class HomePage extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        expenseRecAdapter.notifyDataSetChanged();
         incomeRecAdapter.notifyDataSetChanged();
         expenseRecAdapter.notifyDataSetChanged();
     }

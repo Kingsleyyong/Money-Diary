@@ -15,9 +15,9 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/emailSignUpPage3"
-            app:layout_constraintEnd_toStartOf="@+id/emailSignUpPage3"
-            app:layout_constraintTop_toTopOf="@+id/emailSignUpPage3"
+            app:layout_constraintBottom_toBottomOf="@+id/editProfileEmail"
+            app:layout_constraintEnd_toStartOf="@+id/editProfileEmail"
+            app:layout_constraintTop_toTopOf="@+id/editProfileEmail"
             app:srcCompat="@drawable/mail_logo" />
 
         <ImageView
@@ -25,9 +25,9 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/usernameSignUpPage3"
-            app:layout_constraintEnd_toStartOf="@+id/usernameSignUpPage3"
-            app:layout_constraintTop_toTopOf="@+id/usernameSignUpPage3"
+            app:layout_constraintBottom_toBottomOf="@+id/editProfileName"
+            app:layout_constraintEnd_toStartOf="@+id/editProfileName"
+            app:layout_constraintTop_toTopOf="@+id/editProfileName"
             app:srcCompat="@drawable/person_logo" />
 
         <ImageView
@@ -35,9 +35,9 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/reconfirmPasswordSignUpPage3"
-            app:layout_constraintEnd_toStartOf="@+id/reconfirmPasswordSignUpPage3"
-            app:layout_constraintTop_toTopOf="@+id/reconfirmPasswordSignUpPage3"
+            app:layout_constraintBottom_toBottomOf="@+id/editProfileReconfirm"
+            app:layout_constraintEnd_toStartOf="@+id/editProfileReconfirm"
+            app:layout_constraintTop_toTopOf="@+id/editProfileReconfirm"
             app:srcCompat="@drawable/password_logo" />
 
         <ImageView
@@ -45,13 +45,13 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:contentDescription="@string/todo"
-            app:layout_constraintBottom_toBottomOf="@+id/passwordSignUpPage3"
-            app:layout_constraintEnd_toStartOf="@+id/passwordSignUpPage3"
-            app:layout_constraintTop_toTopOf="@+id/passwordSignUpPage3"
+            app:layout_constraintBottom_toBottomOf="@+id/editProfilePass"
+            app:layout_constraintEnd_toStartOf="@+id/editProfilePass"
+            app:layout_constraintTop_toTopOf="@+id/editProfilePass"
             app:srcCompat="@drawable/password_logo" />
 
         <EditText
-            android:id="@+id/usernameSignUpPage3"
+            android:id="@+id/editProfileName"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="80dp"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/emailSignUpPage3"
+            android:id="@+id/editProfileEmail"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
@@ -84,10 +84,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.77"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/usernameSignUpPage3" />
+            app:layout_constraintTop_toBottomOf="@+id/editProfileName" />
 
         <EditText
-            android:id="@+id/passwordSignUpPage3"
+            android:id="@+id/editProfilePass"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
@@ -102,10 +102,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.77"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailSignUpPage3" />
+            app:layout_constraintTop_toBottomOf="@+id/editProfileEmail" />
 
         <EditText
-            android:id="@+id/reconfirmPasswordSignUpPage3"
+            android:id="@+id/editProfileReconfirm"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
@@ -120,6 +120,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.77"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordSignUpPage3" />
+            app:layout_constraintTop_toBottomOf="@+id/editProfilePass" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
