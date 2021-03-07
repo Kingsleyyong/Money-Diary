@@ -32,8 +32,8 @@
                 android:layout_marginTop="40dp"
                 android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/_0_00"
                 android:inputType="numberDecimal"
-                android:text="@string/_0_00"
                 android:textAlignment="viewEnd"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="@+id/spinnerCategory_Expense"
@@ -41,13 +41,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <EditText
+            <Button
                 android:id="@+id/datePicker_Expense"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:background="#d4d4d4"
+                android:backgroundTint="#d4d4d4"
                 android:gravity="center"
                 android:hint="@string/select_date"
                 android:padding="15dp"

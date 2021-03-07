@@ -37,7 +37,7 @@ public class IncomeInputFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    EditText date;
+    Button date;
     DatePickerDialog datePickerDialog;
 
     public IncomeInputFragment() {
@@ -82,7 +82,7 @@ public class IncomeInputFragment extends Fragment {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-        date = (EditText) view.findViewById(R.id.datePicker_Income);
+        date = (Button) view.findViewById(R.id.datePicker_Income);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +102,7 @@ public class IncomeInputFragment extends Fragment {
         });
 
         Button submit = view.findViewById(R.id.SubmitRecord_Income);
-        EditText date = view.findViewById(R.id.datePicker_Income);
+        Button date = view.findViewById(R.id.datePicker_Income);
         EditText money = view.findViewById(R.id.moneyInput_Income);
         EditText desc = view.findViewById(R.id.description_Income);
 
