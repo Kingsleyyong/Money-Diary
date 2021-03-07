@@ -1,35 +1,25 @@
 package com.madassignment.moneydiary;
-import android.view.View;
-import android.widget.DatePicker;
-import android.widget.Spinner;
-
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity(tableName = "expense_records")
 
 public class expense_record {
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "expenseId")
-    public int expense_id;
-    @ColumnInfo(name = "expenseCategory")
-    public String expense_cate;
-    @ColumnInfo(name = "expenseDecs")
-    public String expense_decs;
-    @ColumnInfo(name = "expensePrice")
-    public float expense_price;
-    @ColumnInfo(name = "expenseDate")
-    public String expense_date;
+    private int expense_id;
+    private String expense_cate;
+    private String expense_decs;
+    private double expense_price;
+    private String expense_date;
 
-    public expense_record( ) {
+    public expense_record(String expense_decs, double expense_price, String expense_cate, String expense_date) {
+        this.expense_decs = expense_decs;
+        this.expense_price = expense_price;
+        this.expense_cate = expense_cate;
+        this.expense_date = expense_date;
     }
 
-    public expense_record(String category, String decs, float price, String expense_date) {
+    public expense_record(int expense_id, String expense_decs, double expense_price,
+                          String expense_cate, String expense_date) {
         this.expense_id = expense_id;
-        this.expense_cate = category;
-        this.expense_decs = decs;
-        this.expense_price = price;
+        this.expense_decs = expense_decs;
+        this.expense_price = expense_price;
+        this.expense_cate = expense_cate;
         this.expense_date = expense_date;
     }
 
@@ -42,7 +32,7 @@ public class expense_record {
     public String getCategory() {
         return this.expense_cate;
     }
-    public float getPrice() {
+    public double getPrice() {
         return this.expense_price;
     }
     public String getDate() {
@@ -64,4 +54,5 @@ public class expense_record {
         this.expense_price = expense_price;
     }
 }
+
 

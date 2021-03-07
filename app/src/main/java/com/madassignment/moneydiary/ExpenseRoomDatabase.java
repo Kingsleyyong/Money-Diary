@@ -1,3 +1,4 @@
+/*
 package com.madassignment.moneydiary;
 import android.content.Context;
 import androidx.room.Database;
@@ -25,3 +26,4 @@ public abstract class ExpenseRoomDatabase  extends RoomDatabase{
         return INSTANCE;
     }
 }
+*/
