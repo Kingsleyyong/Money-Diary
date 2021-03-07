@@ -11,6 +11,7 @@ import com.madassignment.moneydiary.ui.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -41,7 +42,7 @@ public class ExpenseInputFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    EditText date;
+    Button date;
     DatePickerDialog datePickerDialog;
 
     public ExpenseInputFragment() {
@@ -86,7 +87,7 @@ public class ExpenseInputFragment extends Fragment {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mySpinner.setAdapter(myAdapter);
 
-        date = (EditText) view.findViewById(R.id.datePicker_Expense);
+        date = (Button) view.findViewById(R.id.datePicker_Expense);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

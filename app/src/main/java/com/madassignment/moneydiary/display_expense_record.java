@@ -26,8 +26,8 @@ public class display_expense_record extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.expense_list);
         db.openOrCreateDatabase("Expense_database.db", null, null);
 
-        Cursor c = db.query("expense_records", null, null, null, null
-        ,null, null);
+        Cursor c = db.query("expense_records", null, null, null,
+                null,null, null);
 
         description = new String[c.getCount()];
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
 
     <View
         android:layout_width="350dp"
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextDateRecord"
         android:layout_width="84dp"
         android:layout_height="36dp"
@@ -27,11 +28,12 @@
         android:hint="@string/dd_mm_yy"
         android:inputType="date"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/editTextCategoryRecord"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextCategoryRecord"
         android:layout_width="134dp"
         android:layout_height="37dp"
@@ -40,11 +42,12 @@
         android:hint="@string/category_name"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toStartOf="@+id/editTextAmountRecord"
         app:layout_constraintStart_toEndOf="@+id/editTextDateRecord"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextAmountRecord"
         android:layout_width="89dp"
         android:layout_height="36dp"
@@ -53,21 +56,31 @@
         android:hint="@string/_0_00"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextCategoryRecord"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <TextView
         android:id="@+id/editTextDescRecord"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="218dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#FFFFFF"
         android:hint="@string/hint"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCategoryRecord" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextDescRecord"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAmountRecord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
