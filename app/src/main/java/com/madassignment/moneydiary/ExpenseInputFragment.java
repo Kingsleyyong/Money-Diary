@@ -65,6 +65,7 @@ public class ExpenseInputFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        userID = getActivity().getIntent().getIntExtra("userID", -1);
 
         View view = inflater.inflate(R.layout.fragment_expense_input, container, false);
         Spinner mySpinner =  (Spinner) view.findViewById(R.id.spinnerCategory_Expense);

@@ -51,6 +51,7 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
                 public void onClick(View v) {
                     dao.deleteOne(incomeList.get(position).getincomeID());
                     notifyDataSetChanged();
+                    HomePage.totalincome.setText(String.format("%.2f",dao.totalIncome()));
                 }
             });
         }
