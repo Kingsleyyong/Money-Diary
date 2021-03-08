@@ -94,6 +94,8 @@
     <string name="back_to_main">BACK TO MAIN</string>
     <string name="total_expense_rm">Total Expense: RM</string>
     <string name="total_income_rm" >Total Income:   RM</string>
+    <string name="money_diary_official">Money Diary Official</string>
+    <string name="moneydiaryofficial">moneydiaryofficial</string>
 
     <string-array name="incomeCategory">
         <item>Full Time Job 1</item>

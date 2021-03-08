@@ -83,8 +83,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="253dp"
-                android:layout_height="198dp"
+                android:layout_width="317dp"
+                android:layout_height="171dp"
                 android:contentDescription="@string/mmulogo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
