@@ -51,6 +51,7 @@ public class ExpenseRecAdapter extends RecyclerView.Adapter<ExpenseRecAdapter.Vi
                 public void onClick(View v) {
                     dao.deleteOne(expenseList.get(position).getExpense_id());
                     notifyDataSetChanged();
+                    HomePage.totalexpense.setText(String.format("%.2f",dao.totalExpense()));
                 }
             });
         }

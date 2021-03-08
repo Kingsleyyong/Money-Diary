@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -26,6 +25,11 @@ public class HomePage extends AppCompatActivity {
     ImageView aboutus, feedback;
     TextView usrname;
     int userID;
+
+    incomeDAO incomedao;
+    public static TextView totalincome;
+    Expense_record_dao expensedao;
+    public static TextView totalexpense;
 
     RecyclerView expenseRecycler;
     ExpenseRecAdapter expenseRecAdapter;
@@ -48,9 +52,9 @@ public class HomePage extends AppCompatActivity {
         userID = Integer.parseInt(uid);
 
         // Expense setup
-        Expense_record_dao expensedao = new Expense_record_dao(this, userID);
+        expensedao = new Expense_record_dao(this, userID);
 
-        TextView totalexpense = findViewById(R.id.expenseNumber);
+        totalexpense = findViewById(R.id.expenseNumber);
 
         totalexpense.setText(String.format("%.2f", expensedao.totalExpense()));
 
@@ -62,9 +66,9 @@ public class HomePage extends AppCompatActivity {
 
 
         // Income setup
-        incomeDAO incomedao = new incomeDAO(this, userID);
+        incomedao = new incomeDAO(this, userID);
 
-        TextView totalincome = findViewById(R.id.incomeNumber);
+        totalincome = findViewById(R.id.incomeNumber);
 
         totalincome.setText(String.format("%.2f", incomedao.totalIncome()));
 
@@ -204,5 +208,7 @@ public class HomePage extends AppCompatActivity {
         super.onResume();
         incomeRecAdapter.notifyDataSetChanged();
         expenseRecAdapter.notifyDataSetChanged();
+        totalincome.setText(String.format("%.2f", incomedao.totalIncome()));
+        totalexpense.setText(String.format("%.2f", expensedao.totalExpense()));
     }
 }
