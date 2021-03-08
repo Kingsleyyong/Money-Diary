@@ -37,33 +37,33 @@
         app:layout_constraintTop_toBottomOf="@+id/contactUsLabel" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/fbimg"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="@+id/instaimg"
+        app:layout_constraintStart_toStartOf="@+id/instaimg"
         app:layout_constraintTop_toBottomOf="@+id/feedbackLabel"
         app:srcCompat="@mipmap/facebook_foreground" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/instaimg"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/twitterimg"
+        app:layout_constraintStart_toStartOf="@+id/twitterimg"
+        app:layout_constraintTop_toBottomOf="@+id/fbimg"
         app:srcCompat="@mipmap/instagram_foreground" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/twitterimg"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toStartOf="@+id/twitterlink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/instaimg"
         app:srcCompat="@mipmap/twitter_foreground" />
 
     <TextView
@@ -73,10 +73,10 @@
         android:text="@string/money_diary_official"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/fbimg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7" />
+        app:layout_constraintStart_toEndOf="@+id/fbimg"
+        app:layout_constraintTop_toTopOf="@+id/fbimg" />
 
     <TextView
         android:id="@+id/iglink"
@@ -85,10 +85,10 @@
         android:text="@string/moneydiaryofficial"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintBottom_toBottomOf="@+id/instaimg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+        app:layout_constraintStart_toEndOf="@+id/instaimg"
+        app:layout_constraintTop_toTopOf="@+id/instaimg" />
 
     <TextView
         android:id="@+id/twitterlink"
@@ -97,10 +97,10 @@
         android:text="@moneydiary_official"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/twitterimg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        app:layout_constraintStart_toEndOf="@+id/twitterimg"
+        app:layout_constraintTop_toTopOf="@+id/twitterimg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

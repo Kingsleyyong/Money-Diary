@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -15,6 +16,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,13 +29,32 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
+public class Feedback extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
+
+    Uri uri1 = Uri.parse("https://www.facebook.com");
+    Uri uri2 = Uri.parse("https://www.instagram.com");
+    Uri uri3 = Uri.parse("https://twitter.com");
+    Intent intent1 = new Intent(Intent.ACTION_VIEW, uri1);
+    Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
+    Intent intent3 = new Intent(Intent.ACTION_VIEW, uri3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
 
+        ImageView fbPic = (ImageView) findViewById(R.id.fbimg);
+        fbPic.setOnClickListener(this);
+        ImageView instaPic = (ImageView) findViewById(R.id.instaimg);
+        instaPic.setOnClickListener(this);
+        ImageView twitterPic = (ImageView) findViewById(R.id.twitterimg);
+        twitterPic.setOnClickListener(this);
+        TextView fbBtn = (TextView) findViewById(R.id.fblink);
+        fbBtn.setOnClickListener(this);
+        TextView instaBtn = (TextView) findViewById(R.id.iglink);
+        instaBtn.setOnClickListener(this);
+        TextView twitterBtn = (TextView) findViewById(R.id.twitterlink);
+        twitterBtn.setOnClickListener(this);
 
         TextView feedback = findViewById(R.id.feedbackLabel);
         String fbTxt = "Feel free to drop us your feedback.";
@@ -93,5 +115,17 @@ public class Feedback extends AppCompatActivity implements OnMapReadyCallback {
             return;
         }
         mMap.setMyLocationEnabled(true);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fbimg:
+            case R.id.fblink: startActivity(intent1); break;
+            case R.id.iglink:
+            case R.id.instaimg: startActivity(intent2); break;
+            case R.id.twitterimg:
+            case R.id.twitterlink:  startActivity(intent3); break;
+        }
     }
 }
