@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SignInPage extends AppCompatActivity {
 
+    private long backPressTime;
+    private Toast backToast;
+
     EditText namee, pass;
     Button signInButton;
 
@@ -80,6 +83,13 @@ public class SignInPage extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), SignUpPage.class);
             startActivity(i);
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+//        Intent i = new Intent(getApplicationContext(), LoadingScreen.class);
+//        startActivity(i);
 
     }
 }

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link NonEditableUserData#newInstance} factory method to
@@ -74,14 +76,21 @@ public class NonEditableUserData extends Fragment {
         final UserDao userDao = db.userDao();
         User user = userDao.UserById(uid);
 
+        incomeDAO incomedao = new incomeDAO(getContext(), uid);
+        Expense_record_dao expensedao = new Expense_record_dao(getContext(), uid);
+
         String displayName =  user.username;
         String displayEmail = user.email;
 
         TextView name = view.findViewById(R.id.viewProfileName);
         TextView email = view.findViewById(R.id.viewProfileEmail);
+        TextView showExpense = view.findViewById(R.id.profileTtlExpense);
+        TextView showIncome = view.findViewById(R.id.profileTtlIncome);
 
         name.setText(displayName);
         email.setText(displayEmail);
+        showExpense.setText(String.format("%.2f", expensedao.totalExpense()));
+        showIncome.setText(String.format("%.2f", incomedao.totalIncome()));
 
         // Inflate the layout for this fragment
         return view;
