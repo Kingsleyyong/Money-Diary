@@ -48,28 +48,28 @@ public class HomePage extends AppCompatActivity {
         userID = Integer.parseInt(uid);
 
         // Expense setup
-        Expense_record_dao expensedao = new Expense_record_dao(this);
+        Expense_record_dao expensedao = new Expense_record_dao(this, userID);
 
         TextView totalexpense = findViewById(R.id.expenseNumber);
 
         totalexpense.setText(String.format("%.2f", expensedao.totalExpense()));
 
         expenseRecycler = findViewById(R.id.expenseRec);
-        expenseRecAdapter = new ExpenseRecAdapter();
+        expenseRecAdapter = new ExpenseRecAdapter(userID);
         expenseRecAdapter.setCtx(this);
 
         expenseRecycler.setAdapter(expenseRecAdapter);
 
 
         // Income setup
-        incomeDAO incomedao = new incomeDAO(this);
+        incomeDAO incomedao = new incomeDAO(this, userID);
 
         TextView totalincome = findViewById(R.id.incomeNumber);
 
         totalincome.setText(String.format("%.2f", incomedao.totalIncome()));
 
         incomeRecycler = findViewById(R.id.incomeRec);
-        incomeRecAdapter = new incomeRecAdapter();
+        incomeRecAdapter = new incomeRecAdapter(userID);
         incomeRecAdapter.setCtx(this);
 
         incomeRecycler.setAdapter(incomeRecAdapter);

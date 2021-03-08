@@ -100,7 +100,7 @@ public class ExpenseInputFragment extends Fragment {
 
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Expense_record_dao dao = new Expense_record_dao(getContext());
+                Expense_record_dao dao = new Expense_record_dao(getContext(), userID);
                 boolean yay = true;
 
                 if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){

@@ -15,9 +15,14 @@ import java.util.List;
 public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.ViewHolder> {
     Context ctx;
     List<income> incomeList;
+    int uID;
 
     public void setCtx(Context ctx) {
         this.ctx = ctx;
+    }
+
+    incomeRecAdapter(int uID){
+        this.uID = uID;
     }
 
     @NonNull
@@ -34,25 +39,26 @@ public class incomeRecAdapter extends RecyclerView.Adapter<incomeRecAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        incomeDAO dao = new incomeDAO(ctx);
+        incomeDAO dao = new incomeDAO(ctx, uID);
         incomeList = dao.getAll();
 
-        holder.date.setText(incomeList.get(position).getincomeDate());
-        holder.desc.setText(incomeList.get(position).getincomeDesc());
-        holder.cate.setText(incomeList.get(position).getincomeCate());
-        holder.amt.setText(String.format("%.2f", incomeList.get(position).getincomeAmt()));
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dao.deleteOne(incomeList.get(position).getincomeID());
-                notifyDataSetChanged();
-            }
-        });
-
+        if (incomeList.size() != 0){
+            holder.date.setText(incomeList.get(position).getincomeDate());
+            holder.desc.setText(incomeList.get(position).getincomeDesc());
+            holder.cate.setText(incomeList.get(position).getincomeCate());
+            holder.amt.setText(String.format("%.2f", incomeList.get(position).getincomeAmt()));
+            holder.delete.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    dao.deleteOne(incomeList.get(position).getincomeID());
+                    notifyDataSetChanged();
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        incomeDAO dao = new incomeDAO(ctx);
+        incomeDAO dao = new incomeDAO(ctx, uID);
         return dao.totalNumber();
     }
 

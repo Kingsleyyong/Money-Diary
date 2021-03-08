@@ -20,9 +20,11 @@ public class Expense_record_dao extends SQLiteOpenHelper {
     private static final String expenseCate = "expenseCate";
     private static final String expenseDate = "expenseDate";
     private static final String userID = "userID";
+    private final int uID;
 
-    public Expense_record_dao(@Nullable Context context) {
+    public Expense_record_dao(@Nullable Context context, int uID) {
         super(context, "moneydiary_expense.db", null, 1);
+        this.uID = uID;
     }
 
     @Override
@@ -76,7 +78,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
         List<expense_record> list = new ArrayList<expense_record>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, null, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             expense_record q = new expense_record(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
@@ -106,7 +108,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
     public double totalExpense(){
         SQLiteDatabase db = this.getReadableDatabase();
         double total = 0;
-        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, null, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID, expenseDesc, expenseAmt, expenseCate, expenseDate, userID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += result.getDouble(2);
@@ -120,7 +122,7 @@ public class Expense_record_dao extends SQLiteOpenHelper {
     public int totalNumber(){
         SQLiteDatabase db = this.getReadableDatabase();
         int total = 0;
-        Cursor result = db.query(expenseDB, new String[]{expenseID}, null, null, null, null, null, null);
+        Cursor result = db.query(expenseDB, new String[]{expenseID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += 1;

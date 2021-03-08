@@ -111,7 +111,7 @@ public class IncomeInputFragment extends Fragment {
 
         submit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                incomeDAO dao = new incomeDAO(getContext());
+                incomeDAO dao = new incomeDAO(getContext(), userID);
                 boolean yay = true;
 
                 if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){

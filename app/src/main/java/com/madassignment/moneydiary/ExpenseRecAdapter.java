@@ -15,9 +15,14 @@ import java.util.List;
 public class ExpenseRecAdapter extends RecyclerView.Adapter<ExpenseRecAdapter.ViewHolder>{
     Context ctx;
     List<expense_record> expenseList;
+    int userID;
 
     public void setCtx(Context ctx) {
         this.ctx = ctx;
+    }
+
+    ExpenseRecAdapter(int uID){
+        this.userID = uID;
     }
 
     @NonNull
@@ -34,26 +39,26 @@ public class ExpenseRecAdapter extends RecyclerView.Adapter<ExpenseRecAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ExpenseRecAdapter.ViewHolder holder, int position) {
-        Expense_record_dao dao = new Expense_record_dao(ctx);
+        Expense_record_dao dao = new Expense_record_dao(ctx, userID);
         expenseList = dao.getAll();
 
-        holder.date.setText(expenseList.get(position).getDate());
-        holder.desc.setText(expenseList.get(position).getDecs());
-        holder.cate.setText(expenseList.get(position).getCategory());
-
-        holder.amt.setText(String.format("%.2f", expenseList.get(position).getPrice()));
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dao.deleteOne(expenseList.get(position).getExpense_id());
-                notifyDataSetChanged();
-            }
-        });
-
+        if (expenseList.size() != 0 && expenseList.get(position).getUserID() == userID){
+            holder.date.setText(expenseList.get(position).getDate());
+            holder.desc.setText(expenseList.get(position).getDecs());
+            holder.cate.setText(expenseList.get(position).getCategory());
+            holder.amt.setText(String.format("%.2f", expenseList.get(position).getPrice()));
+            holder.delete.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    dao.deleteOne(expenseList.get(position).getExpense_id());
+                    notifyDataSetChanged();
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        Expense_record_dao dao = new Expense_record_dao(ctx);
+        Expense_record_dao dao = new Expense_record_dao(ctx, userID);
         return dao.totalNumber();
     }
 

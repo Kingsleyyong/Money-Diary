@@ -21,9 +21,11 @@ public class incomeDAO extends SQLiteOpenHelper {
     private static final String incomeCate = "incomeCate";
     private static final String incomeDate = "incomeDate";
     private static final String userID = "userID";
+    private final int uID;
 
-    public incomeDAO(@Nullable Context context) {
+    public incomeDAO(@Nullable Context context, int uID) {
         super(context, "moneydiary.db", null, 1);
+        this.uID = uID;
     }
 
     @Override
@@ -71,7 +73,7 @@ public class incomeDAO extends SQLiteOpenHelper {
         List<income> list = new ArrayList<income>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, null, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             income q = new income(result.getInt(0), result.getString(1), result.getDouble(2), result.getString(3), result.getString(4), result.getInt(5));
@@ -101,7 +103,7 @@ public class incomeDAO extends SQLiteOpenHelper {
     public double totalIncome(){
         SQLiteDatabase db = this.getReadableDatabase();
         double total = 0;
-        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, null, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID, incomeDesc, incomeAmt, incomeCate, incomeDate, userID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += result.getDouble(2);
@@ -115,7 +117,7 @@ public class incomeDAO extends SQLiteOpenHelper {
     public int totalNumber(){
         SQLiteDatabase db = this.getReadableDatabase();
         int total = 0;
-        Cursor result = db.query(incomeDB, new String[]{incomeID}, null, null, null, null, null, null);
+        Cursor result = db.query(incomeDB, new String[]{incomeID}, userID + "=" + uID, null, null, null, null, null);
 
         for (result.moveToFirst(); !result.isAfterLast(); result.moveToNext()){
             total += 1;
