@@ -106,7 +106,7 @@ public class ExpenseInputFragment extends Fragment {
 
                 if (desc.getText().toString().matches("") || date.getText().toString().isEmpty() || money.getText().toString().matches("") ){
                     yay = false;
-                    Toast.makeText(getContext(),"Enter Every Information!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(),"Please insert all details!",Toast.LENGTH_LONG).show();
                 }
                 else
                 {

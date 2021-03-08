@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button edtBtn,subBtn;
+    Button edtBtn,subBtn, mainBtn;
     String uid;
 
     @Override
@@ -26,8 +26,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         edtBtn = findViewById(R.id.editProfileBtn);
         subBtn = findViewById(R.id.submitBtn);
+        mainBtn = findViewById(R.id.backToMainBtn);
+
         edtBtn.setOnClickListener(this);
         subBtn.setOnClickListener(this);
+        mainBtn.setOnClickListener(this);
 
         FragmentManager fm = getSupportFragmentManager();
         NonEditableUserData newFrag = new NonEditableUserData();
@@ -97,10 +100,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 }
 
             }
+        }
 
-//
-//            ft.replace(R.id.frameLayout2, new NonEditableUserData());
-//            ft.commit();
+        if(v.getId() == R.id.backToMainBtn) {
+            this.onBackPressed();
         }
     }
 }

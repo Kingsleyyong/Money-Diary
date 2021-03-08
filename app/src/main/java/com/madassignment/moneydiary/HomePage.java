@@ -194,8 +194,8 @@ public class HomePage extends AppCompatActivity {
     public void onBackPressed() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
-        builder.setTitle("Confirmation PopUp").
-                setMessage("You sure that you want to logout?");
+        builder.setTitle("Confirmation: ").
+                setMessage("Are you sure to proceed log out?");
         builder.setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
