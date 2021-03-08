@@ -200,7 +200,7 @@ public class HomePage extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent i = new Intent(getApplicationContext(),
-                                SignInPage.class);
+                                LoadingScreen.class);
                         startActivity(i);
                     }
                 });
