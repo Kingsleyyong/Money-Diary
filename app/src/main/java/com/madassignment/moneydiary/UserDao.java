@@ -24,7 +24,7 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userID = (:uid) ")
     User UserById(int uid);
 
-    @Query("UPDATE user SET userPW = 'ABC123' WHERE userEmail= (:usrEmail)")
+    @Query("UPDATE user SET userPW = 'ABC123' , userCfPw = 'ABC123' WHERE userEmail= (:usrEmail)")
     void resetPassword(String usrEmail);
 
     @Query("UPDATE user SET userName=:uname , userEmail=:uemail, userPW=:upass , userCfPw=:uconpass WHERE userID=:uid")
@@ -33,9 +33,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userEmail = :email ")
     List<User>findUser(String email);
 
-    @Query("DELETE FROM user WHERE userEmail = :email ")    // suitable?
-    void deleteUser(String email);                       // suitable?
+    @Query("DELETE FROM user WHERE userEmail = :email ")
+    void deleteUser(String email);
 
-    @Query("SELECT * FROM user")        // suitable?
-    LiveData<List<User>> getAllUser();  // suitable?
+    @Query("SELECT * FROM user")
+    LiveData<List<User>> getAllUser();
 }

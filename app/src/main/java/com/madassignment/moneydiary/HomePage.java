@@ -85,7 +85,9 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.imageManage).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(HomePage.this, "Profile ImageButton Clicked", Toast.LENGTH_SHORT).show();
+
+                        bottomSheetDialog.dismiss();
 
                         Intent profile = new Intent(getApplicationContext(), ProfileActivity.class).putExtra("uid",uid);
                         startActivity(profile);
@@ -95,7 +97,10 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.imageSettings).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Settings ImageButton Clicked", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(HomePage.this, "Settings ImageButton Clicked", Toast.LENGTH_SHORT).show();
+
+                        bottomSheetDialog.dismiss();
+
                         createNewSettingDialog();
                     }
                 });
@@ -103,7 +108,9 @@ public class HomePage extends AppCompatActivity {
                 sheetView.findViewById(R.id.buttonLogOut).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(HomePage.this, "Logout Button Clicked", Toast.LENGTH_SHORT).show();
+
+                        bottomSheetDialog.dismiss();
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(HomePage.this);
                         builder.setTitle("Confirmation: ").
@@ -147,7 +154,6 @@ public class HomePage extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(this);
         final View settingPopUp = getLayoutInflater().inflate(R.layout.setting_pop_up,null);
 
-
         aboutus = (ImageView) settingPopUp.findViewById(R.id.aboutUsImage);
         feedback = (ImageView) settingPopUp.findViewById(R.id.feedbackImage);
 
@@ -158,7 +164,10 @@ public class HomePage extends AppCompatActivity {
         aboutus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomePage.this, "About Us", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HomePage.this, "About Us", Toast.LENGTH_SHORT).show();
+
+                dialog.dismiss();
+
                 Intent i = new Intent(HomePage.this, About_us.class);
                 startActivity(i);
             }
@@ -167,7 +176,10 @@ public class HomePage extends AppCompatActivity {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomePage.this, "Feedback", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HomePage.this, "Feedback", Toast.LENGTH_SHORT).show();
+
+                dialog.dismiss();
+
                 Intent i = new Intent(HomePage.this, Feedback.class);
                 startActivity(i);
             }
