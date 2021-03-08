@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/phone_Cardview"
-    android:layout_width="400dp"
+    android:layout_width="450dp"
     android:layout_height="200dp"
     android:layout_margin="10dp"
     android:textAlignment="center"
@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:id="@+id/background_color"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/card2"
         android:padding="5dp">
@@ -20,14 +20,14 @@
 
         <ImageView
             android:id="@+id/phone_image"
-            android:layout_width="120dp"
-            android:layout_height="132dp"
+            android:layout_width="142dp"
+            android:layout_height="152dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="31dp"
-            android:layout_marginBottom="42dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/lyn_img" />
 
         <TextView
