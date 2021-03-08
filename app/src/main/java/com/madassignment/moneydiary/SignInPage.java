@@ -87,9 +87,9 @@ public class SignInPage extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        Intent i = new Intent(getApplicationContext(), LoadingScreen.class);
-        startActivity(i);
+        moveTaskToBack(true);
+//        Intent i = new Intent(getApplicationContext(), LoadingScreen.class);
+//        startActivity(i);
 
     }
 }
