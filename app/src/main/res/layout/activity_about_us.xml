@@ -12,7 +12,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/chabi_shape"
         android:fontFamily="@font/unlock"
         android:gravity="center"
@@ -24,12 +24,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/swipe_to_view_our_members"
+        android:textColor="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:layout_marginTop="-5dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSwipe"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout

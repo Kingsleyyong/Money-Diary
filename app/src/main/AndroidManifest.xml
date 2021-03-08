@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.madassignment.moneydiary">
+    package="com.madassignment.moneydiary"
+    android:screenOrientation="portrait"
+    >
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:screenOrientation="portrait"
+        android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +20,15 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyDiary">
-        <activity android:name=".Feedback"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".About_us" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".Feedback"></activity>
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".ProfileActivity" />
+        <activity
+            android:name=".About_us"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,25 +41,40 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".HomePage" />
-        <activity android:name=".addRecord" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".HomePage" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".addRecord" />
         <activity
             android:name=".SignUpPage"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MoneyDiary.PopMe" />
         <activity
             android:name=".ForgetPassword"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MoneyDiary.PopMe" />
-        <activity android:name=".SignInPage" />
-        <activity android:name=".LoadingScreen">
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SignInPage" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".LoadingScreen">
             //make this activity as main default launcher activity
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action
+                    android:screenOrientation="portrait"
+                    android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category
+                    android:screenOrientation="portrait"
+                    android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <meta-data
+            android:screenOrientation="portrait"
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>

@@ -55,6 +55,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
             newFrag.setArguments(b);
 
+            mainBtn.setVisibility(View.GONE);
             edtBtn.setVisibility(View.GONE);
             subBtn.setVisibility(View.VISIBLE);
         }
@@ -86,6 +87,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     final UserDao userDao = db.userDao();
                     userDao.editProfile(name, email, pass, conPass, ID);
 
+                    mainBtn.setVisibility(View.VISIBLE);
                     edtBtn.setVisibility(View.VISIBLE);
                     subBtn.setVisibility(View.GONE);
 
